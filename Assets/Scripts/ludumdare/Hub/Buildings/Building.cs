@@ -1,30 +1,34 @@
 using UnityEngine;
+using UnityEngine.Events;
 
-public enum DeliveryTypes { Mail, Package, None };
-public abstract class Building: MonoBehaviour
+namespace LudumDare.Hub.Buildings
 {
-    private int _level = 0;
-    
-    [SerializeField] private Sprite _sprite;
-    [SerializeField] private int _portability;
-    [SerializeField] private DeliveryTypes _deliveryType;
-    [SerializeField] private BuildingLevel[] _levels;
-
-    public void Upgrade()
+    public class Building: MonoBehaviour
     {
-        _level += 1;
-        _levels[_level].Upgrade(this);
+        private int _level = 0;    
+        [SerializeField] private BuildingLevel[] levels;
+        [SerializeField] private BuildingUpgradeEvent upgradeEvent;
+
+        private void Start() 
+        {
+            ExecuteUpgrade();
+        }
+
+        public void Upgrade()
+        {
+            _level += 1;
+            ExecuteUpgrade();
+        }
+
+        private void ExecuteUpgrade()
+        {
+            upgradeEvent.Invoke((_level, levels[_level]));
+        }
     }
 
-    public void SetSprite(Sprite newSprite)
+    [System.Serializable]
+    public class BuildingUpgradeEvent: UnityEvent<(int, BuildingLevel)>
     {
-        _sprite = newSprite;
-    }
 
-    public void SetPortability(int newPortability)
-    {
-        _portability = newPortability;
     }
-
-    public abstract void LaunchDelivery();
 }

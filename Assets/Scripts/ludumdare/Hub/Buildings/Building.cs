@@ -34,6 +34,7 @@ namespace LudumDare.Hub.Buildings
         }
     }
 
+#nullable enable
     [System.Serializable]
-    public class BuildingUpgradeEvent: UnityEvent<(int, BuildingLevel, BuildingLevel)> {}
+    public class BuildingUpgradeEvent: UnityEvent<(int, BuildingLevel, BuildingLevel?)> {}
 }

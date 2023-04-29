@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 854783e3cf6435b458eb3bb36b629654, type: 3}
   m_Name: DP Lvl 2
   m_EditorClassIdentifier: 
-  sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  sprite: {fileID: 490506313, guid: fb0e2e965dbaa024d8fa1998f5763d9a, type: 3}
   description: upgrade to 2
   price: 0
+  animatorController: {fileID: 9100000, guid: e3174fc96bd0248478d6b21c4512e6ff, type: 2}

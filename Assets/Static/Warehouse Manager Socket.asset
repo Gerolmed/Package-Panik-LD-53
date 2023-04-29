@@ -9,10 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 854783e3cf6435b458eb3bb36b629654, type: 3}
-  m_Name: EC Lvl 0
+  m_Script: {fileID: 11500000, guid: 39e9f078152a4c9ab596f8128cf69811, type: 3}
+  m_Name: Warehouse Manager Socket
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 5f500eb9bfc196346837ab364de250c6, type: 3}
-  description: 
-  price: 0
-  animatorController: {fileID: 0}

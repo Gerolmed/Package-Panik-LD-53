@@ -16,6 +16,8 @@ namespace LudumDare.Hub.Buildings
 
         public void Upgrade()
         {
+            if (_level == levels.Length - 1) return;
+
             _level += 1;
             ExecuteUpgrade();
         }

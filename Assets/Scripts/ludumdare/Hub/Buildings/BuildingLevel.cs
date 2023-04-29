@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace LudumDare.Hub.Buildings
 {
-    [CreateAssetMenu(menuName = "BuildingLevel")]
+    [CreateAssetMenu(menuName = "LD/Building/BuildingLevel")]
     public class BuildingLevel : ScriptableObject
     {
         [SerializeField] private Sprite sprite;

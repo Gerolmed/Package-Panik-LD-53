@@ -10,34 +10,45 @@ namespace LudumDare.WorldGraph
 
         private int _idCounter = 0;
 
-        private int _width;
-        private int _height;
+        private int _leftBound = 0;
+        private int _rightBound = 0;
+        private int _topBound = 0;
+        private int _botBound = 0;
 
-        private Dictionary<Vector2Int, Node<T>> _nodeGraph = new();
+        public Dictionary<Vector2Int, Node<T>> NodeGraph { get; } = new();
 
 
 
         public SpatialAStar<Node<T>, NavUser> ToAstar() {
-            var grid = new Node<T>[_width, _height];
-            foreach (var pos in _nodeGraph.Keys) {
-                grid[pos.x, pos.y] = _nodeGraph[pos];
+            var grid = new Node<T>[_rightBound - _leftBound, _topBound - _botBound];
+            foreach (var pos in NodeGraph.Keys) {
+                grid[pos.x + _leftBound, pos.y + _botBound] = NodeGraph[pos];
             }
 
             var astar = new SpatialAStar<Node<T>, NavUser>(grid);
             return astar;
         }
 
+        public Vector2Int GetRelativePos(Vector2Int pos) {
+            return new Vector2Int(pos.x + _leftBound, pos.y + _botBound);
+        }
+
+
         public Node<T> AddNodeAt(Vector2Int pos, T data,
             DirectionMask directions = DirectionMask.None)
         {
+            if(pos.x < _leftBound) _leftBound = pos.x;
+            if(pos.x > _rightBound) _rightBound = pos.x;
+            if(pos.y < _botBound) _botBound = pos.y;
+            if(pos.y > _topBound) _topBound = pos.y;   
+
             var node = new Node<T>(pos, data, directions, _idCounter++);
 
-            _nodeGraph.Add(pos, node);
+            NodeGraph.Add(pos, node);
             UpdateLinks(node);
 
             return node;
         }
-
 
         private void UpdateLinks(Node<T> node)
         {
@@ -99,7 +110,7 @@ namespace LudumDare.WorldGraph
 
         private bool TryGetNode(Vector2Int pos, out Node<T> node)
         {
-            return _nodeGraph.TryGetValue(pos, out node);
+            return NodeGraph.TryGetValue(pos, out node);
         }
     }
 

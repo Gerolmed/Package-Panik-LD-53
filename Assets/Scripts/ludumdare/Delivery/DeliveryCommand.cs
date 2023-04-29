@@ -7,6 +7,8 @@ namespace LudumDare.Delivery {
         
         public DeliveryType DeliveryType { get; }
 
+        public Vector2Int Pos { get; }
+
     }
 
 }

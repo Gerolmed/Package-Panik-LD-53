@@ -6,6 +6,7 @@ using LudumDare.Utils;
 using LudumDare.Units;
 using LudumDare.Units.Navigation;
 using LudumDare.WorldGraph;
+using LudumDare.WorldGraph.Warehouses.Impl;
 
 
 namespace LudumDare.Delivery {
@@ -17,10 +18,14 @@ namespace LudumDare.Delivery {
         private DeliveryUnitStorageSocket unitStorage;
 
         [SerializeField]
+        private WarehouseManager warehouseManager;
+
+        [SerializeField]
         private UnitNavigator unitNavigator;
 
         private List<DeliveryCommand> _commands = new();
 
+        private Graph<NodeData> _graph;
         private SpatialAStar<Node<NodeData>, NavUser> _map;
 
 
@@ -46,13 +51,28 @@ namespace LudumDare.Delivery {
             }
         }
 
-        private IReadOnlyList<PathNode> BuildPath(List<DeliveryCommand> commands) {
-            
+        private IReadOnlyList<PathNode> BuildPath(List<DeliveryCommand> commands, NavUser user) {
+            var path = new List<PathNode>();
+            var warehouse = warehouseManager.GetAll().GetEnumerator().Current;
+            path.Add(new PathNode() {Pos = warehouse.GetPosition()});
+
+            foreach (var cmd in commands) {
+                MoveToDestintion(cmd.Pos, path, user);
+            }
+
+            MoveToDestintion(warehouse.GetPosition(), path, user);
+            return path;
+        }
+
+        private void MoveToDestintion(Vector2Int dest, IReadOnlyList<PathNode> path, NavUser user) {
+            var current = _graph.GetRelativePos(path[-1].Pos);
+            var relDest = _graph.GetRelativePos(dest);
+            _map.Search(current, relDest, user);
         }
 
         private void DispatchUnit(List<DeliveryCommand> commands, IUnitInstance unit) {
             unit.Occupied = true;
-            var path = BuildPath(commands);
+            var path = BuildPath(commands, unit.Type.NavUser);
             StartCoroutine(DispatchUnitInternal(path, unit));
         }
 
@@ -64,6 +84,7 @@ namespace LudumDare.Delivery {
 
         public void AssignGraph(Graph<NodeData> graph) {
             _map = graph.ToAstar();
+            _graph = graph;
         }
 
 

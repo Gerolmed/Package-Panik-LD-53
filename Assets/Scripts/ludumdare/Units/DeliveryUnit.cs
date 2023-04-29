@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using LudumDare.WorldGraph;
 
 namespace LudumDare.Units
 {
@@ -15,6 +16,7 @@ namespace LudumDare.Units
 
         public NavigationType NavType => navType;
         
+        public NavUser NavUser { get; } = new GroundUnitUser();
         
         [SerializeField]
         private int totalWeight = 1;

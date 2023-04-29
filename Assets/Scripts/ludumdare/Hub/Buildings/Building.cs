@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using LudumDare.MoneySystem;
 
 namespace LudumDare.Hub.Buildings
 {
@@ -9,6 +10,8 @@ namespace LudumDare.Hub.Buildings
         [SerializeField] private BuildingLevel[] levels;
         [SerializeField] private BuildingUpgradeEvent upgradeEvent;
 
+        [SerializeField] private MoneyManagerSocket moneyManagerSocket;
+
         private void Start() 
         {
             ExecuteUpgrade();
@@ -17,9 +20,12 @@ namespace LudumDare.Hub.Buildings
         public void Upgrade()
         {
             if (_level == levels.Length - 1) return;
-
-            _level += 1;
-            ExecuteUpgrade();
+            
+            if (moneyManagerSocket.Instance.TryDeduct(levels[_level + 1].Price, TransactionType.Upgrades))
+            {
+                _level += 1;
+                ExecuteUpgrade();
+            } 
         }
 
         private void ExecuteUpgrade()

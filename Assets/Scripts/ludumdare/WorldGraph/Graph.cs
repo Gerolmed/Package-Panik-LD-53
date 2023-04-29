@@ -6,18 +6,49 @@ namespace LudumDare.WorldGraph
 {
     public class Graph<T>
     {
+
+        private int _idCounter = 0;
+
         private Dictionary<Vector2Int, Node<T>> _nodeGraph = new();
+
+        private Dictionary<(int, int), (Node<T>, int)> _pathCache = new();
 
 
         private Node<T> AddNodeAt(Vector2Int pos, T data,
             DirectionMask directions = DirectionMask.None)
         {
-            var node = new Node<T>(pos, data, directions);
+            var node = new Node<T>(pos, data, directions, _idCounter++);
 
             _nodeGraph.Add(pos, node);
             UpdateLinks(node);
 
             return node;
+        }
+
+
+        public (Node<T>, int) GetNext(Node<T> from, Node<T> to) {
+            var key = (from.Id, to.Id);
+            if (_pathCache.ContainsKey(key))
+                return _pathCache[key];
+
+            if (from == to) return (null, 0);
+
+            // avoid infinite loop
+            _pathCache[key] = (null, int.MaxValue);
+
+            int minDistance = 0;
+            Node<T> next = null;
+            foreach (var link in from.Links) {
+                var result = GetNext(link, to);
+                if (next == null || result.Item2 < minDistance) {
+                    next = link;
+                    minDistance = result.Item2;
+                }
+            }
+
+            var res = (next, minDistance + 1);
+            _pathCache[key] = res;
+            return res;
         }
 
 

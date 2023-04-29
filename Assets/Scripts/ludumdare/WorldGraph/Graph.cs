@@ -10,16 +10,24 @@ namespace LudumDare.WorldGraph
 
         private int _idCounter = 0;
 
+        private int _width;
+        private int _height;
+
         private Dictionary<Vector2Int, Node<T>> _nodeGraph = new();
 
 
 
         public SpatialAStar<Node<T>, NavUser> ToAstar() {
-            var astar = new SpatialAStar<>
+            var grid = new Node<T>[_width, _height];
+            foreach (var pos in _nodeGraph.Keys) {
+                grid[pos.x, pos.y] = _nodeGraph[pos];
+            }
+
+            var astar = new SpatialAStar<Node<T>, NavUser>(grid);
+            return astar;
         }
 
-
-        private Node<T> AddNodeAt(Vector2Int pos, T data,
+        public Node<T> AddNodeAt(Vector2Int pos, T data,
             DirectionMask directions = DirectionMask.None)
         {
             var node = new Node<T>(pos, data, directions, _idCounter++);

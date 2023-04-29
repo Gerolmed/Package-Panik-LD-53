@@ -1,6 +1,5 @@
-using UnityEngine;
 
-namespace LudumDare.Graph {
+namespace LudumDare.WorldGraph {
 
     public class NodeData {
         

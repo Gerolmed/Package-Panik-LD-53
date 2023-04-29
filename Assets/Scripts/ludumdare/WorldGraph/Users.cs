@@ -1,6 +1,6 @@
 using LudumDare.Utils;
 
-namespace LudumDare.Graph {
+namespace LudumDare.WorldGraph {
 
     public interface NavUser {
 

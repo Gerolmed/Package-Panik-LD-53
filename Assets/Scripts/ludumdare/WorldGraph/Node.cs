@@ -10,9 +10,6 @@ namespace LudumDare.WorldGraph
         public object Data { get; }
         public DirectionMask Directions { get; }
         public List<Node<T>> Links { get; } = new();
-
-        public int X { get; }
-        public int Y { get; }
         
 
         public int Id { get; }

@@ -1,10 +1,9 @@
-﻿#if UNITY_EDITOR
+﻿
 using UnityEditor;
-#endif
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-namespace LudumDare.WorldGraph.Tilemap
+namespace LudumDare.WorldGraph.TilemapGraph
 {
     public class NodeTile: Tile
     {

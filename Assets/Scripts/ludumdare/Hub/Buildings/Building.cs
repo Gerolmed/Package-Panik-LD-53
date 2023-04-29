@@ -24,10 +24,10 @@ namespace LudumDare.Hub.Buildings
 
         private void ExecuteUpgrade()
         {
-            upgradeEvent.Invoke((_level, levels[_level]));
+            upgradeEvent.Invoke((_level, levels[_level], levels[_level + 1]));
         }
     }
 
     [System.Serializable]
-    public class BuildingUpgradeEvent: UnityEvent<(int, BuildingLevel)> {}
+    public class BuildingUpgradeEvent: UnityEvent<(int, BuildingLevel, BuildingLevel)> {}
 }

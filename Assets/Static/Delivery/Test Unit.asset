@@ -17,3 +17,7 @@ MonoBehaviour:
   totalWeight: 1
   maintenanceCost: 1
   purchaseCost: 1
+  facingUp: {fileID: 21300000, guid: 61b99fb6a26120544a67c83c224342a0, type: 3}
+  facingRight: {fileID: 21300000, guid: 0bd849cce9c5c2049833a7ac85dd787d, type: 3}
+  facingDown: {fileID: 21300000, guid: 1b50421f108179241a61f01afa8b6099, type: 3}
+  facingLeft: {fileID: 21300000, guid: b2541005ca6214e4792a917b39ae3d30, type: 3}

@@ -61,7 +61,7 @@ namespace LudumDare.Units.Navigation
 
         private void UpdateSprite(Vector2 fromPos, Vector2 toPos)
         {
-            var diff = fromPos - toPos;
+            var diff = toPos - fromPos;
             var icon =  diff switch
             {
                 {y: > 0} => Unit.FacingUp,
@@ -76,7 +76,7 @@ namespace LudumDare.Units.Navigation
 
         private void SetPos(Vector2 pos)
         {
-            transform.position = pos;
+            transform.position = pos + new Vector2(.5f, .5f);
         }
     }
     

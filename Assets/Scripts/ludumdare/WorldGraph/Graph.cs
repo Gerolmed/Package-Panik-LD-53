@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using LudumDare.Utils;
 
 namespace LudumDare.WorldGraph
 {
@@ -10,6 +11,12 @@ namespace LudumDare.WorldGraph
         private int _idCounter = 0;
 
         private Dictionary<Vector2Int, Node<T>> _nodeGraph = new();
+
+
+
+        public SpatialAStar<Node<T>, NavUser> ToAstar() {
+            var astar = new SpatialAStar<>
+        }
 
 
         private Node<T> AddNodeAt(Vector2Int pos, T data,

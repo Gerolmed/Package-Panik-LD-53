@@ -1,18 +1,36 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using LudumDare.Utils;
 
 namespace LudumDare.WorldGraph
 {
     public class Graph<T>
     {
+
+        private int _idCounter = 0;
+
+        private int _width;
+        private int _height;
+
         private Dictionary<Vector2Int, Node<T>> _nodeGraph = new();
 
 
-        private Node<T> AddNodeAt(Vector2Int pos, T data,
+
+        public SpatialAStar<Node<T>, NavUser> ToAstar() {
+            var grid = new Node<T>[_width, _height];
+            foreach (var pos in _nodeGraph.Keys) {
+                grid[pos.x, pos.y] = _nodeGraph[pos];
+            }
+
+            var astar = new SpatialAStar<Node<T>, NavUser>(grid);
+            return astar;
+        }
+
+        public Node<T> AddNodeAt(Vector2Int pos, T data,
             DirectionMask directions = DirectionMask.None)
         {
-            var node = new Node<T>(pos, data, directions);
+            var node = new Node<T>(pos, data, directions, _idCounter++);
 
             _nodeGraph.Add(pos, node);
             UpdateLinks(node);

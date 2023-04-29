@@ -18,7 +18,6 @@ namespace LudumDare.WorldGraph
         public Dictionary<Vector2Int, Node<T>> NodeGraph { get; } = new();
 
 
-
         public SpatialAStar<Node<T>, NavUser> ToAstar() {
             var grid = new Node<T>[_rightBound - _leftBound, _topBound - _botBound];
             foreach (var pos in NodeGraph.Keys) {

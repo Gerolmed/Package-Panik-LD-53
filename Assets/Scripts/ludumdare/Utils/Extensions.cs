@@ -25,5 +25,12 @@ namespace LudumDare.Utils
             dict.Add(key, outVal);
             return dict[key] = doCompute.Invoke(outVal);
         }
+
+        public static T Pop<T>(this List<T> list, Predicate<T> match) {
+            var item = list.FindLast(match);
+            if(item != null)
+                list.Remove(item);
+            return item;
+        }
     }
 }

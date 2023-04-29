@@ -2,7 +2,7 @@
 {
     public interface IUnitInstance
     {
-        public bool Occupied { get; }
+        public bool Occupied { get; set; }
         public DeliveryUnit Type { get; }
     }
 
@@ -14,7 +14,7 @@
         }
 
 
-        public bool Occupied { private set; get; }
+        public bool Occupied { set; get; }
         public DeliveryUnit Type { get; }
     }
 }

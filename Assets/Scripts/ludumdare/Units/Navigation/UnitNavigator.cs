@@ -26,9 +26,9 @@ namespace LudumDare.Units.Navigation
         }
 
 
-        public void StartTraversal(IReadOnlyList<PathNode> path)
+        public Coroutine StartTraversal(IReadOnlyList<PathNode> path)
         {
-            StartCoroutine(StartInnerTraversal(path));
+            return StartCoroutine(StartInnerTraversal(path));
         }
         
         private IEnumerator StartInnerTraversal(IReadOnlyList<PathNode> path)

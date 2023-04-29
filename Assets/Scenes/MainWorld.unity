@@ -245,6 +245,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tilemap: {fileID: 953809832}
+  onGenerate:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &846148308
 Transform:
   m_ObjectHideFlags: 0

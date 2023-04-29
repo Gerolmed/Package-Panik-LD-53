@@ -26,6 +26,23 @@ namespace LudumDare.Units
         [SerializeField]
         private int purchaseCost = 1;
         public int PurchaseCost => purchaseCost;
+
+        [SerializeField]
+        private Sprite facingUp;
+        
+        [SerializeField]
+        private Sprite facingRight;
+        
+        [SerializeField]
+        private Sprite facingDown;
+        
+        [SerializeField]
+        private Sprite facingLeft;
+
+        public Sprite FacingLeft => facingLeft;
+        public Sprite FacingUp => facingUp;
+        public Sprite FacingRight => facingRight;
+        public Sprite FacingDown => facingDown;
     }
     
     public enum NavigationType

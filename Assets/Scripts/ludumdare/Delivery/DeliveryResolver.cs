@@ -64,10 +64,15 @@ namespace LudumDare.Delivery {
             return path;
         }
 
-        private void MoveToDestintion(Vector2Int dest, IReadOnlyList<PathNode> path, NavUser user) {
+        private void MoveToDestintion(Vector2Int dest, List<PathNode> path, NavUser user) {
             var current = _graph.GetRelativePos(path[-1].Pos);
             var relDest = _graph.GetRelativePos(dest);
-            _map.Search(current, relDest, user);
+            var steps = _map.Search(current, relDest, user);
+            if(steps == null) return;
+            
+            foreach (var node in steps) {
+                path.Add(new PathNode() {Pos = node.Pos});
+            }
         }
 
         private void DispatchUnit(List<DeliveryCommand> commands, IUnitInstance unit) {

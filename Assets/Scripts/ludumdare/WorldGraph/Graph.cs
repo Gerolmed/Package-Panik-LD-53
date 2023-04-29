@@ -32,7 +32,6 @@ namespace LudumDare.WorldGraph
             return new Vector2Int(pos.x + _leftBound, pos.y + _botBound);
         }
 
-
         public Node<T> AddNodeAt(Vector2Int pos, T data,
             DirectionMask directions = DirectionMask.None)
         {

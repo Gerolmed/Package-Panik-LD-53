@@ -1,13 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+public enum DeliveryTypes { Mail, Package, None };
 public abstract class Building: MonoBehaviour
 {
     private int _level = 0;
     
     [SerializeField] private Sprite _sprite;
     [SerializeField] private int _portability;
+    [SerializeField] private DeliveryTypes _deliveryType;
     [SerializeField] private BuildingLevel[] _levels;
 
     public void Upgrade()

@@ -2,7 +2,7 @@
 
 namespace LudumDare.Units
 {
-    [CreateAssetMenu(menuName = "Unit", order = 0)]
+    [CreateAssetMenu(menuName = "LD/Unit/Unit Type", order = 0)]
     public class DeliveryUnit : ScriptableObject
     {
         [SerializeField]

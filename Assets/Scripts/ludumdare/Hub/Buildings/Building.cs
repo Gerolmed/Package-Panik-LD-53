@@ -5,7 +5,7 @@ namespace LudumDare.Hub.Buildings
 {
     public class Building: MonoBehaviour
     {
-        private int _level = 0;    
+        private int _level = 0;
         [SerializeField] private BuildingLevel[] levels;
         [SerializeField] private BuildingUpgradeEvent upgradeEvent;
 
@@ -27,8 +27,5 @@ namespace LudumDare.Hub.Buildings
     }
 
     [System.Serializable]
-    public class BuildingUpgradeEvent: UnityEvent<(int, BuildingLevel)>
-    {
-
-    }
+    public class BuildingUpgradeEvent: UnityEvent<(int, BuildingLevel)> {}
 }

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: AO Lvl 1
   m_EditorClassIdentifier: 
   sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  description: 
+  description: build
   price: 0

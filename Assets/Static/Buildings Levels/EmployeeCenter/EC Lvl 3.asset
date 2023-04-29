@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: EC Lvl 3
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: c3161252630b7ad40bac14d595b417d4, type: 3}
-  description: 
+  description: upgrade to 3
   price: 0

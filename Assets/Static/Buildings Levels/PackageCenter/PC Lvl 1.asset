@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: PC Lvl 1
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 578f844e5ecf43e4c9512a41f4fdfa70, type: 3}
-  description: 
+  description: build
   price: 0

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 854783e3cf6435b458eb3bb36b629654, type: 3}
   m_Name: PC Lvl 3
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 57831c0afeb4f674991f5493b35c6be0, type: 3}
   description: 
   price: 0

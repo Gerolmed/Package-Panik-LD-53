@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 854783e3cf6435b458eb3bb36b629654, type: 3}
   m_Name: EC Lvl 2
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: dc86fe459b09b9941b8531642e0c2fcc, type: 3}
   description: 
   price: 0

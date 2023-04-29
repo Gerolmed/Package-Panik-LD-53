@@ -24,7 +24,7 @@ namespace LudumDare.Hub.Buildings
 
         private void ExecuteUpgrade()
         {
-            upgradeEvent.Invoke((_level, levels[_level], levels[_level + 1]));
+            upgradeEvent.Invoke((_level, levels[_level], _level + 1 == levels.Length ? null : levels[_level + 1]));
         }
     }
 

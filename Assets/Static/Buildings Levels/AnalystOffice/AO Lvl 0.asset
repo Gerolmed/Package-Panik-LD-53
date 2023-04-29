@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 854783e3cf6435b458eb3bb36b629654, type: 3}
   m_Name: AO Lvl 0
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
+  sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   description: 
   price: 0

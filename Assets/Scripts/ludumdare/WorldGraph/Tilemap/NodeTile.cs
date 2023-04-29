@@ -8,7 +8,11 @@ namespace LudumDare.WorldGraph.Tilemap
 {
     public class NodeTile: Tile
     {
-        
+        [SerializeField]
+        private DirectionMask directionMask;
+
+        public DirectionMask DirectionMask => directionMask;
+
 #if UNITY_EDITOR
      
         // The following is a helper that adds a menu item to create a RoadTile Asset
@@ -18,7 +22,7 @@ namespace LudumDare.WorldGraph.Tilemap
             var path = EditorUtility.SaveFilePanelInProject("Save Node Tile", "New Node Tile", "asset", "Save Node Tile", "Assets");
             if (path == "")
                 return;
-            AssetDatabase.CreateAsset(ScriptableObject.CreateInstance<NodeTile>(), path);
+            AssetDatabase.CreateAsset(CreateInstance<NodeTile>(), path);
         }
 #endif
     }

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8040ba1271d24871bd751004b368f0bc, type: 3}
-  m_Name: Tileset_2
+  m_Name: Tileset_26
   m_EditorClassIdentifier: 
   m_Sprite: {fileID: 1209820857, guid: b21287b216018054d885612de9cecfc9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -34,3 +34,4 @@ MonoBehaviour:
   m_InstancedGameObject: {fileID: 0}
   m_Flags: 1
   m_ColliderType: 1
+  directionMask: 8

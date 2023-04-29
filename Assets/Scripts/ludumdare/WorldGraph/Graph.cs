@@ -12,7 +12,7 @@ namespace LudumDare.WorldGraph
         private Dictionary<Vector2Int, Node<T>> _nodeGraph = new();
 
 
-        private Node<T> AddNodeAt(Vector2Int pos, T data,
+        public Node<T> AddNodeAt(Vector2Int pos, T data,
             DirectionMask directions = DirectionMask.None)
         {
             var node = new Node<T>(pos, data, directions, _idCounter++);

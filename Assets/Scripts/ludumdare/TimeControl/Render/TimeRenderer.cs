@@ -35,7 +35,7 @@ namespace LudumDare.TimeControl.Render
             hoursDisplay.sprite = CalcSprite(hour, 24, hourSprites);
 
             dateText.text =
-                "WEEK " + (manager.Week + 1) + " - " + ConvertDay(manager.DayOfWeek);
+                "WEEK " + (manager.Week + 1) + " - " + ConvertDay(manager.DayOfWeek).ToUpper();
         }
 
 

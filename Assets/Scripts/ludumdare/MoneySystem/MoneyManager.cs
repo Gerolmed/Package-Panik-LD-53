@@ -14,7 +14,7 @@ namespace LudumDare.MoneySystem
         private readonly Dictionary<TransactionType, int> _history = new();
 
 
-        public int Balance { get; private set; }
+        public int Balance { get; private set; } = 1500;
 
 
         private void Awake()

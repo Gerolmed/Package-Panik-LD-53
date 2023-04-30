@@ -7,7 +7,6 @@ namespace LudumDare.FleetManagement.UI
 {
     public class DeliveryUnitUIRenderer : MonoBehaviour {
         [SerializeField] private Image image;
-        [SerializeField] private TMP_Text nameTMP;
         [SerializeField] private TMP_Text weightTMP;
         [SerializeField] private TMP_Text maintenanceCostTMP;
         [SerializeField] private TMP_Text purchaseCostTMP; 
@@ -20,10 +19,11 @@ namespace LudumDare.FleetManagement.UI
 
         public void Render(DeliveryUnit unitType)
         {
-            // image.sprite = unitType.Sprite;
-            // nameTMP.text = unitType.Name;
-            weightTMP.text = unitType.TotalWeight.ToString() + " / day";
-            maintenanceCostTMP.text = unitType.MaintenanceCost.ToString() + " / day";
+            image.sprite = unitType.Icon;
+            image.SetNativeSize();
+
+            weightTMP.text = unitType.TotalWeight.ToString();
+            maintenanceCostTMP.text = unitType.MaintenanceCost.ToString();
             purchaseCostTMP.text = unitType.PurchaseCost.ToString();
         }
 

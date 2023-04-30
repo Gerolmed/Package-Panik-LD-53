@@ -13,14 +13,19 @@ namespace LudumDare.FleetManagement.UI
         [SerializeField] private TMP_Text purchaseCostTMP; 
         [SerializeField] private TMP_Text amountTMP; 
 
-        public void Render(DeliveryUnit deliveryUnit)
+        public void Render(DeliveryUnit unitType)
         {
-            // image.sprite = deliveryUnit.Sprite;
-            // nameTMP.text = deliveryUnit.Name;
-            weightTMP.text = deliveryUnit.TotalWeight.ToString() + " / day";
-            maintenanceCostTMP.text = deliveryUnit.MaintenanceCost.ToString() + " / day";
-            purchaseCostTMP.text = deliveryUnit.PurchaseCost.ToString();
+            // image.sprite = unitType.Sprite;
+            // nameTMP.text = unitType.Name;
+            weightTMP.text = unitType.TotalWeight.ToString() + " / day";
+            maintenanceCostTMP.text = unitType.MaintenanceCost.ToString() + " / day";
+            purchaseCostTMP.text = unitType.PurchaseCost.ToString();
             // amountTMP.text = "0";
+        }
+
+        public void RenderAmount(uint amount)
+        {
+            amountTMP.text = amount.ToString();
         }
     }
 }

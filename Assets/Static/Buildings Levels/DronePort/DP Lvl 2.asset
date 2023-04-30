@@ -16,3 +16,4 @@ MonoBehaviour:
   description: upgrade to 2
   price: 0
   animatorController: {fileID: 9100000, guid: e3174fc96bd0248478d6b21c4512e6ff, type: 2}
+  unitUnlocked: {fileID: 11400000, guid: 3995f8b4dceefd344b1ae528d48745ea, type: 2}

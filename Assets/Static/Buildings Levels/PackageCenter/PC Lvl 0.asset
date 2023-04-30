@@ -16,3 +16,4 @@ MonoBehaviour:
   description: 
   price: 0
   animatorController: {fileID: 0}
+  unitUnlocked: {fileID: 11400000, guid: 65cc8ffb1f3ed3841b18b3909c82c710, type: 2}

@@ -15,5 +15,6 @@ namespace LudumDare.Hub.Buildings
         public string Description => description;
         public int Price => price;
         public RuntimeAnimatorController AnimatorController => animatorController;
+        public DeliveryUnit UnitUnlocked => unitUnlocked;
     }
 }

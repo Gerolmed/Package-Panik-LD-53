@@ -10,6 +10,7 @@ namespace LudumDare.Hub.Buildings
         public void Render((int level, BuildingLevel buildingLevel, BuildingLevel nextLevel) upgrade)
         {
             image.sprite = upgrade.buildingLevel.Sprite;
+            image.SetNativeSize();
             
             if (animator) 
                 animator.runtimeAnimatorController = upgrade.buildingLevel.AnimatorController;

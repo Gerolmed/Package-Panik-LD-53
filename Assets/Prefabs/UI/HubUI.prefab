@@ -8005,13 +8005,13 @@ PrefabInstance:
       value: Employee Center
       objectReference: {fileID: 0}
     - target: {fileID: 8618011627429825902, guid: 4fef10c9236fd28418b68463599d0e5b, type: 3}
-      propertyPath: upgradeEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8618011627429825902, guid: 4fef10c9236fd28418b68463599d0e5b, type: 3}
       propertyPath: upgradeEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 9895468864733476}
+    - target: {fileID: 8618011627429825902, guid: 4fef10c9236fd28418b68463599d0e5b, type: 3}
+      propertyPath: upgradeEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8618011627429825902, guid: 4fef10c9236fd28418b68463599d0e5b, type: 3}
       propertyPath: upgradeEvent.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
@@ -8146,13 +8146,13 @@ PrefabInstance:
       value: Package Center
       objectReference: {fileID: 0}
     - target: {fileID: 8618011627429825902, guid: 6fdc1ab4ab3b25c4ba03047588d498d3, type: 3}
-      propertyPath: upgradeEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8618011627429825902, guid: 6fdc1ab4ab3b25c4ba03047588d498d3, type: 3}
       propertyPath: upgradeEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 7396705855135539343}
+    - target: {fileID: 8618011627429825902, guid: 6fdc1ab4ab3b25c4ba03047588d498d3, type: 3}
+      propertyPath: upgradeEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8618011627429825902, guid: 6fdc1ab4ab3b25c4ba03047588d498d3, type: 3}
       propertyPath: upgradeEvent.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
@@ -8287,13 +8287,13 @@ PrefabInstance:
       value: Drone Port
       objectReference: {fileID: 0}
     - target: {fileID: 8618011627429825902, guid: d347f7be426703f4bb2ac0d6f8baa873, type: 3}
-      propertyPath: upgradeEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8618011627429825902, guid: d347f7be426703f4bb2ac0d6f8baa873, type: 3}
       propertyPath: upgradeEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 3324610407071523539}
+    - target: {fileID: 8618011627429825902, guid: d347f7be426703f4bb2ac0d6f8baa873, type: 3}
+      propertyPath: upgradeEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8618011627429825902, guid: d347f7be426703f4bb2ac0d6f8baa873, type: 3}
       propertyPath: upgradeEvent.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2

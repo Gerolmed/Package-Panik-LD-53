@@ -15,3 +15,5 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: e9ee85c6f44b50d4cad624ae78a867d5, type: 3}
   description: upgrade to 2
   price: 0
+  animatorController: {fileID: 0}
+  unitUnlocked: {fileID: 11400000, guid: f4785b35c1780c840879901887027602, type: 2}

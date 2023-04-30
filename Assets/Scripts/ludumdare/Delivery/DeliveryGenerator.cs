@@ -17,9 +17,9 @@ namespace LudumDare.Delivery
         {
             if (cycle == 0) return;
             resolver.ExecuteDelivery(new List<DeliveryCommand> {
-                new DeliveryCommand(new Vector2Int(5, 4), Units.DeliveryType.Mail),
+                new DeliveryCommand(new Vector2Int(4, 2), Units.DeliveryType.Mail),
                 new DeliveryCommand(new Vector2Int(2, 4), Units.DeliveryType.Mail),
-                new DeliveryCommand(new Vector2Int(-5, 2), Units.DeliveryType.Mail),
+                new DeliveryCommand(new Vector2Int(-4, 3), Units.DeliveryType.Mail),
             });
         }
     }

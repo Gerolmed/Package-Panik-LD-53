@@ -7,6 +7,8 @@ namespace LudumDare.WorldGraph
 
     public interface NavNode<T>: IPathNode<NavUser> {
         
+
+
     }
 
     public class Node<T>: NavNode<T> {
@@ -16,19 +18,15 @@ namespace LudumDare.WorldGraph
         public DirectionMask Directions { get; }
         public List<Node<T>> Links { get; } = new();
         
-
-        private bool _walkable;
-
         public int Id { get; }
 
 
-        public Node(Vector2Int pos, bool walkable, object data, DirectionMask directions, int id)
+        public Node(Vector2Int pos, object data, DirectionMask directions, int id)
         {
             Pos = pos;
             Data = data;
             Directions = directions;
             Id = id;
-            _walkable = walkable;
         }
 
 
@@ -44,17 +42,18 @@ namespace LudumDare.WorldGraph
         }
 
         public bool IsWalkable(NavUser user) {
-            return _walkable;
+            return true;
         }
 
     }
-
 
     public class FillerNode<T>: NavNode<T> {
 
         public bool IsWalkable(NavUser user) {
             return false;
         }
+
+        public DirectionMask Directions { get; }
 
     }
 

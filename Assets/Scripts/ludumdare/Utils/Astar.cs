@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using LudumDare.WorldGraph;
 
 
 /*
@@ -31,6 +32,9 @@ namespace LudumDare.Utils
     public interface IPathNode<TUserContext>
     {
         Boolean IsWalkable(TUserContext inContext);
+
+        public DirectionMask Directions { get; }
+
     }
 
     public interface IIndexedObject
@@ -88,6 +92,10 @@ namespace LudumDare.Utils
                 Y = inY;
                 UserContext = inUserContext;
             }
+
+            public DirectionMask Directions => UserContext.Directions;
+
+
         }
 
         public SpatialAStar(TPathNode[,] inGrid)
@@ -286,22 +294,22 @@ namespace LudumDare.Utils
             int x = inAround.X;
             int y = inAround.Y;
 
-            if (y > 0)
+            if (y > 0 && (inAround.Directions & DirectionMask.Down) > 0)
                 inNeighbors[0] = m_SearchSpace[x, y - 1];
             else
                 inNeighbors[0] = null;
 
-            if (x > 0)
+            if (x > 0 && (inAround.Directions & DirectionMask.Left) > 0)
                 inNeighbors[1] = m_SearchSpace[x - 1, y];
             else
                 inNeighbors[1] = null;
 
-            if (x < Width - 1)
+            if (x < Width - 1 && (inAround.Directions & DirectionMask.Right) > 0)
                 inNeighbors[2] = m_SearchSpace[x + 1, y];
             else
                 inNeighbors[2] = null;
 
-            if (y < Height - 1)
+            if (y < Height - 1 && (inAround.Directions & DirectionMask.Up) > 0)
                 inNeighbors[3] = m_SearchSpace[x, y + 1];
             else
                 inNeighbors[3] = null;

@@ -1,0 +1,44 @@
+{
+	"$baseURI": "https://yal.cc/r/20/pixelfont/",
+	"$version": "1.0",
+	"in-glyphs": [
+		"ABCDEFGHIJ",
+		"KLMNOPQRST",
+		"UVWXYZ.,:;",
+		"+-_^",
+		"1234567890",
+		"[]()=~#'!?"
+	],
+	"glyph-color": "auto",
+	"in-kerning": [
+		""
+	],
+	"glyph-width": 7,
+	"glyph-height": 7,
+	"glyph-ofs-x": 1,
+	"glyph-ofs-y": 1,
+	"glyph-sep-x": 1,
+	"glyph-sep-y": 1,
+	"glyph-base-x": 0,
+	"glyph-baseline": 9,
+	"glyph-spacing": 1,
+	"font-is-mono": false,
+	"font-em-square": 1024,
+	"font-line-gap": 0,
+	"font-ascend": 768,
+	"font-descend": -256,
+	"font-px-size": 128,
+	"font-name": "Endrealm Text Font",
+	"font-author": "Panpukin, Endrealm",
+	"font-copy": "(c)",
+	"font-version": "Version 1.0",
+	"font-desc": "",
+	"font-license": "You have the permission",
+	"font-license-url": "",
+	"font-sample-text": "GWA GWA 123 456",
+	"font-preview-text": [
+		"WAH WAH WAH !=§)§((= 103937 91937 99183239",
+		"24424532532",
+		"523535325"
+	]
+}

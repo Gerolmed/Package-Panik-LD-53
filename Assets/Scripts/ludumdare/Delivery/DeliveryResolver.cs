@@ -57,11 +57,14 @@ namespace LudumDare.Delivery {
         }
 
         private float Distance(DeliveryCommand cmd1, DeliveryCommand cmd2) {
+            /*
             // TODO: fix user
             var steps = _map.Search(_graph.GetRelativePos(cmd1.Pos), _graph.GetRelativePos(cmd2.Pos), new GroundUnitUser());
             if (steps == null) return float.MaxValue;
 
             return steps.Count;
+            */
+            return (cmd1.Pos.x - cmd2.Pos.x) * (cmd1.Pos.x - cmd2.Pos.x) + (cmd1.Pos.y - cmd2.Pos.y) * (cmd1.Pos.y - cmd2.Pos.y);
         }
 
         private IReadOnlyList<PathNode> BuildPath(List<Vector2Int> commands, NavUser user) {
@@ -92,7 +95,7 @@ namespace LudumDare.Delivery {
         private void DispatchUnit(List<Vector2Int> positions, IUnitInstance unit) {
             unit.Occupied = true;
             var path = BuildPath(positions, unit.Type.NavUser);
-            // StartCoroutine(DispatchUnitInternal(path, unit));
+            StartCoroutine(DispatchUnitInternal(path, unit));
         }
 
         private IEnumerator DispatchUnitInternal(IReadOnlyList<PathNode> path, IUnitInstance unit) {

@@ -11,7 +11,7 @@ namespace LudumDare.Utils
 
         public delegate float ClusterFitness<T>(ICollection<T> cluster);
 
-        public static ICollection<T> FindFirstCluster<T>(
+        public static List<T> FindFirstCluster<T>(
             IReadOnlyList<T> items,
             Distance<T> distance,
             ClusterFitness<T> fitness,

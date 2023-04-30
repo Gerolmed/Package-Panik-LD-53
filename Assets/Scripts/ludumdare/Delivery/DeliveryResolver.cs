@@ -45,22 +45,32 @@ namespace LudumDare.Delivery {
                 if (unit.Occupied)
                     continue;
 
-                var command = _commands.Pop(command => command.DeliveryType == unit.Type.DeliveryType);
-                if(command == null) continue;
+                var commands = _commands.FindAll(cmd => cmd.DeliveryType == unit.Type.DeliveryType);
+                var cluster = CluserUtil.FindFirstCluster<DeliveryCommand>(commands, Distance, (cluster) => cluster.Count, 2);
+                if(cluster == null || cluster.Count == 0) continue;
+                foreach (var cmd in cluster) {
+                    _commands.RemoveAll((cmd) => cluster.Contains(cmd));
+                }
 
-                var commandList = new List<DeliveryCommand>();
-                commandList.Add(command);
-                DispatchUnit(new List<DeliveryCommand>(commandList), unit);
+                DispatchUnit(cluster.Select(cmd => cmd.Pos).ToList(), unit);
             }
         }
 
-        private IReadOnlyList<PathNode> BuildPath(List<DeliveryCommand> commands, NavUser user) {
+        private float Distance(DeliveryCommand cmd1, DeliveryCommand cmd2) {
+            // TODO: fix user
+            var steps = _map.Search(_graph.GetRelativePos(cmd1.Pos), _graph.GetRelativePos(cmd2.Pos), new GroundUnitUser());
+            if (steps == null) return float.MaxValue;
+
+            return steps.Count;
+        }
+
+        private IReadOnlyList<PathNode> BuildPath(List<Vector2Int> commands, NavUser user) {
             var path = new List<PathNode>();
             var warehouse = warehouseManager.Instance.GetAll().First();
             path.Add(new PathNode() {Pos = warehouse.GetPosition()});
 
             foreach (var cmd in commands) {
-                MoveToDestintion(cmd.Pos, path, user);
+                MoveToDestintion(cmd, path, user);
             }
 
             MoveToDestintion(warehouse.GetPosition(), path, user);
@@ -79,10 +89,10 @@ namespace LudumDare.Delivery {
             }
         }
 
-        private void DispatchUnit(List<DeliveryCommand> commands, IUnitInstance unit) {
+        private void DispatchUnit(List<Vector2Int> positions, IUnitInstance unit) {
             unit.Occupied = true;
-            var path = BuildPath(commands, unit.Type.NavUser);
-            StartCoroutine(DispatchUnitInternal(path, unit));
+            var path = BuildPath(positions, unit.Type.NavUser);
+            // StartCoroutine(DispatchUnitInternal(path, unit));
         }
 
         private IEnumerator DispatchUnitInternal(IReadOnlyList<PathNode> path, IUnitInstance unit) {

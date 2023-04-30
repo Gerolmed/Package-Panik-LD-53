@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using LudumDare.TimeControl;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -18,6 +19,8 @@ namespace LudumDare.Units.Navigation
         private SpriteRenderer spriteRenderer;
         [SerializeField]
         private DeliveryUnit unit;
+        [SerializeField]
+        private TimeControlManagerSocket timeSocket;
 
         public DeliveryUnit Unit
         {
@@ -53,7 +56,7 @@ namespace LudumDare.Units.Navigation
             while (currentPos != toPos)
             {
                 yield return 0;
-                currentPos = Vector2.MoveTowards(currentPos, toPos, Time.deltaTime * speed);
+                currentPos = Vector2.MoveTowards(currentPos, toPos, Time.deltaTime * speed * timeSocket.Instance.TimeModifier);
                 SetPos(currentPos);
             }
         }

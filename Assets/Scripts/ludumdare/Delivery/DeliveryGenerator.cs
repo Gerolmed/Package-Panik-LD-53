@@ -16,7 +16,11 @@ namespace LudumDare.Delivery
         public void DoGenerate(int cycle)
         {
             if (cycle == 0) return;
-            resolver.ExecuteDelivery(new List<DeliveryCommand> {new DeliveryCommand(new Vector2Int(5, 4), Units.DeliveryType.Mail)});
+            resolver.ExecuteDelivery(new List<DeliveryCommand> {
+                new DeliveryCommand(new Vector2Int(5, 4), Units.DeliveryType.Mail),
+                new DeliveryCommand(new Vector2Int(2, 4), Units.DeliveryType.Mail),
+                new DeliveryCommand(new Vector2Int(-5, 2), Units.DeliveryType.Mail),
+            });
         }
     }
 }

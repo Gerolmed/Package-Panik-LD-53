@@ -26,7 +26,7 @@ namespace LudumDare.Delivery {
         private List<DeliveryCommand> _commands = new();
 
         private Graph<NodeData> _graph;
-        private SpatialAStar<Node<NodeData>, NavUser> _map;
+        private SpatialAStar<NavNode<NodeData>, NavUser> _map;
 
 
         public void ExecuteDelivery(List<DeliveryCommand> batch) {
@@ -71,7 +71,8 @@ namespace LudumDare.Delivery {
             if(steps == null) return;
             
             foreach (var node in steps) {
-                path.Add(new PathNode() {Pos = node.Pos});
+                if(node is Node<NodeData>)
+                    path.Add(new PathNode() {Pos = (node as Node<NodeData>).Pos});
             }
         }
 

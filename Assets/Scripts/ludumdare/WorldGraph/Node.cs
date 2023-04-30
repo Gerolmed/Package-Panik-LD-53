@@ -4,8 +4,13 @@ using LudumDare.Utils;
 
 namespace LudumDare.WorldGraph
 {
-    public class Node<T>: IPathNode<NavUser>
-    {
+
+    public interface NavNode<T>: IPathNode<NavUser> {
+        
+    }
+
+    public class Node<T>: NavNode<T> {
+
         public Vector2Int Pos { get; }
         public object Data { get; }
         public DirectionMask Directions { get; }
@@ -40,4 +45,14 @@ namespace LudumDare.WorldGraph
         }
 
     }
+
+
+    public class FillerNode<T>: NavNode<T> {
+
+        public bool IsWalkable(NavUser user) {
+            return false;
+        }
+
+    }
+
 }

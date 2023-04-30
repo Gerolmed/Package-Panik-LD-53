@@ -45,3 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   socketRef: {fileID: 11400000, guid: 0ebcd7f7d524e3f42aa7c0cb0379cc76, type: 2}
+  secondsPerHour: 10
+  hoursPerCycle: 6

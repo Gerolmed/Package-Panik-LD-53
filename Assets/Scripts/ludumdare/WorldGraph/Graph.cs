@@ -18,18 +18,26 @@ namespace LudumDare.WorldGraph
         public Dictionary<Vector2Int, Node<T>> NodeGraph { get; } = new();
 
 
-        public SpatialAStar<Node<T>, NavUser> ToAstar() {
-            var grid = new Node<T>[_rightBound - _leftBound, _topBound - _botBound];
-            foreach (var pos in NodeGraph.Keys) {
-                grid[pos.x + _leftBound, pos.y + _botBound] = NodeGraph[pos];
+        public SpatialAStar<NavNode<T>, NavUser> ToAstar() {
+            var fillerNode = new FillerNode<T>();
+            var (gWidth, gHeight) = (_rightBound - _leftBound + 1, _topBound - _botBound + 1);
+            var grid = new NavNode<T>[gWidth, gHeight];
+            for (var x = 0; x < gWidth; ++x) {
+                for (var y = 0; y < gHeight; ++y) {
+                    grid[x, y] = fillerNode;
+                }
             }
 
-            var astar = new SpatialAStar<Node<T>, NavUser>(grid);
+            foreach (var pos in NodeGraph.Keys) {
+                grid[pos.x - _leftBound, pos.y - _botBound] = NodeGraph[pos];
+            }
+
+            var astar = new SpatialAStar<NavNode<T>, NavUser>(grid);
             return astar;
         }
 
         public Vector2Int GetRelativePos(Vector2Int pos) {
-            return new Vector2Int(pos.x + _leftBound, pos.y + _botBound);
+            return new Vector2Int(pos.x - _leftBound, pos.y - _botBound);
         }
 
         public Node<T> AddNodeAt(Vector2Int pos, T data,

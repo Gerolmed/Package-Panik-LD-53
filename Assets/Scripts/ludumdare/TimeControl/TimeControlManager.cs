@@ -18,10 +18,14 @@ namespace LudumDare.TimeControl
         private void Awake()
         {
             socketRef.Instance = this;
+        }
 
+
+        private void Start()
+        {
             TimeMode = TimeMode.Normal;
         }
-        
+
 
         public float TimeModifier { private set; get; }
 

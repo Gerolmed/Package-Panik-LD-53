@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7058368217920530285}
   - component: {fileID: 2214810033609314896}
+  - component: {fileID: 7019856810442286750}
   m_Layer: 0
   m_Name: Delivery Resolver
   m_TagString: Untagged
@@ -30,7 +31,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2214810033609314896
 MonoBehaviour:
@@ -47,3 +48,17 @@ MonoBehaviour:
   unitStorage: {fileID: 11400000, guid: 6452f0dfcb53e114ebed0b239f497f84, type: 2}
   warehouseManager: {fileID: 11400000, guid: 3d6ab83ac6b16044c9eaaaa021ba458f, type: 2}
   unitNavigator: {fileID: 7826665097380993759, guid: d66350cb22d652540a04f5705d6b0e57, type: 3}
+--- !u!114 &7019856810442286750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2366566891640561682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82bdb51f54a44297b2dedb51c460afdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controlManagerSocket: {fileID: 11400000, guid: 0ebcd7f7d524e3f42aa7c0cb0379cc76, type: 2}
+  resolver: {fileID: 2214810033609314896}

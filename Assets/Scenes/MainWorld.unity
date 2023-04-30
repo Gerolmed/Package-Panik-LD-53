@@ -210,7 +210,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 67264660}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.18, y: 3.12, z: -10}
+  m_LocalPosition: {x: -0.18, y: -0.63, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15873,6 +15873,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8702304407654776341, guid: 8e45ee3cce7fa14418837edca920020a, type: 3}
+      propertyPath: onCycle.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8702304407654776341, guid: 8e45ee3cce7fa14418837edca920020a, type: 3}
+      propertyPath: onCycle.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8759056839746832534}
+    - target: {fileID: 8702304407654776341, guid: 8e45ee3cce7fa14418837edca920020a, type: 3}
+      propertyPath: onCycle.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8702304407654776341, guid: 8e45ee3cce7fa14418837edca920020a, type: 3}
+      propertyPath: onCycle.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DoGenerate
+      objectReference: {fileID: 0}
+    - target: {fileID: 8702304407654776341, guid: 8e45ee3cce7fa14418837edca920020a, type: 3}
+      propertyPath: onCycle.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: LudumDare.Delivery.DeliveryGenerator, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8702304407654776341, guid: 8e45ee3cce7fa14418837edca920020a, type: 3}
+      propertyPath: onCycle.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15939,3 +15963,14 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22d145a5adf7fa3438f5fb420bc84e98, type: 3}
+--- !u!114 &8759056839746832534 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7019856810442286750, guid: 22d145a5adf7fa3438f5fb420bc84e98, type: 3}
+  m_PrefabInstance: {fileID: 8759056839746832532}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82bdb51f54a44297b2dedb51c460afdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace LudumDare.TimeControl
 {
@@ -14,6 +15,26 @@ namespace LudumDare.TimeControl
         [Min(1)]
         [SerializeField]
         public float hoursPerCycle = 6;
+
+        [SerializeField]
+        public UnityIntEvent onCycle;
+        
+        public float TimeModifier { private set; get; }
+
+        private TimeMode _timeMode;
+        // Time in minutes
+        private float _time;
+        private int _previousCycle = -1;
+
+        public TimeMode TimeMode
+        {
+            get => _timeMode;
+            set
+            {
+                _timeMode = value;
+                TimeModifier = (float) _timeMode;
+            }
+        }
         
         private void Awake()
         {
@@ -27,28 +48,14 @@ namespace LudumDare.TimeControl
         }
 
 
-        public float TimeModifier { private set; get; }
-
-        private TimeMode _timeMode;
-        // Time in minutes
-        private float _time;
-
-        public TimeMode TimeMode
-        {
-            get => _timeMode;
-            set
-            {
-                _timeMode = value;
-                TimeModifier = (float) _timeMode;
-            }
-        }
-
-
         private void Update()
         {
             _time += Time.deltaTime * 60 * TimeModifier / secondsPerHour;
+            var currentCycle = Mathf.FloorToInt(HourOfDay / hoursPerCycle);
+            if (currentCycle == _previousCycle) return;
+            _previousCycle = currentCycle;
+            onCycle.Invoke(currentCycle);
         }
-
 
         public int MinuteOfHour =>
             Mathf.FloorToInt(_time -
@@ -58,4 +65,7 @@ namespace LudumDare.TimeControl
         public int DayOfWeek => Mathf.FloorToInt((_time - Week * 7 * 60 * 24) / (60 * 24));
         public int Week => Mathf.FloorToInt(_time / (7 * 60 * 24));
     }
+    
+    [Serializable]
+    public class UnityIntEvent: UnityEvent<int> {}
 }

@@ -153,7 +153,7 @@ namespace LudumDare.Utils
             if (startNode == endNode)
                 return new LinkedList<TPathNode>(new TPathNode[] { startNode.UserContext });
 
-            PathNode[] neighborNodes = new PathNode[8];
+            PathNode[] neighborNodes = new PathNode[4];
 
             m_ClosedSet.Clear();
             m_OpenSet.Clear();
@@ -286,45 +286,25 @@ namespace LudumDare.Utils
             int x = inAround.X;
             int y = inAround.Y;
 
-            if ((x > 0) && (y > 0))
-                inNeighbors[0] = m_SearchSpace[x - 1, y - 1];
+            if (y > 0)
+                inNeighbors[0] = m_SearchSpace[x, y - 1];
             else
                 inNeighbors[0] = null;
 
-            if (y > 0)
-                inNeighbors[1] = m_SearchSpace[x, y - 1];
+            if (x > 0)
+                inNeighbors[1] = m_SearchSpace[x - 1, y];
             else
                 inNeighbors[1] = null;
 
-            if ((x < Width - 1) && (y > 0))
-                inNeighbors[2] = m_SearchSpace[x + 1, y - 1];
+            if (x < Width - 1)
+                inNeighbors[2] = m_SearchSpace[x + 1, y];
             else
                 inNeighbors[2] = null;
 
-            if (x > 0)
-                inNeighbors[3] = m_SearchSpace[x - 1, y];
+            if (y < Height - 1)
+                inNeighbors[3] = m_SearchSpace[x, y + 1];
             else
                 inNeighbors[3] = null;
-
-            if (x < Width - 1)
-                inNeighbors[4] = m_SearchSpace[x + 1, y];
-            else
-                inNeighbors[4] = null;
-
-            if ((x > 0) && (y < Height - 1))
-                inNeighbors[5] = m_SearchSpace[x - 1, y + 1];
-            else
-                inNeighbors[5] = null;
-
-            if (y < Height - 1)
-                inNeighbors[6] = m_SearchSpace[x, y + 1];
-            else
-                inNeighbors[6] = null;
-
-            if ((x < Width - 1) && (y < Height - 1))
-                inNeighbors[7] = m_SearchSpace[x + 1, y + 1];
-            else
-                inNeighbors[7] = null;
         }
 
         private class OpenCloseMap

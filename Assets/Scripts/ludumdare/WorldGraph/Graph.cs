@@ -29,6 +29,7 @@ namespace LudumDare.WorldGraph
             }
 
             foreach (var pos in NodeGraph.Keys) {
+                // Debug.Log(pos.x + ", " + pos.y);
                 grid[pos.x - _leftBound, pos.y - _botBound] = NodeGraph[pos];
             }
 

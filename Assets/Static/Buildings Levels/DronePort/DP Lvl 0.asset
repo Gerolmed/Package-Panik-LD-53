@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: DP Lvl 0
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: f42aa9baebd88344fb587f021cc7af7a, type: 3}
-  description: 
+  hollowSprite: {fileID: 0}
   price: 0
+  weight: 0
   animatorController: {fileID: 0}
+  hollowAnimatorController: {fileID: 9100000, guid: caae947a45b6325418f9dd22c1fc1308, type: 2}
+  unitUnlocked: {fileID: 0}

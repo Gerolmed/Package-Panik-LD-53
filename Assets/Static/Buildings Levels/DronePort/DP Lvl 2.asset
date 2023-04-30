@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: DP Lvl 2
   m_EditorClassIdentifier: 
   sprite: {fileID: 490506313, guid: fb0e2e965dbaa024d8fa1998f5763d9a, type: 3}
-  description: upgrade to 2
+  hollowSprite: {fileID: 0}
   price: 0
+  weight: 5
   animatorController: {fileID: 9100000, guid: e3174fc96bd0248478d6b21c4512e6ff, type: 2}
   unitUnlocked: {fileID: 11400000, guid: 3995f8b4dceefd344b1ae528d48745ea, type: 2}

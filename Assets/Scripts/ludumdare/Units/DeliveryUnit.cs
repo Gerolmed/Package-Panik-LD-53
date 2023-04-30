@@ -19,6 +19,10 @@ namespace LudumDare.Units
         private UnitType unitType;
 
         public UnitType UnitType => unitType;
+        [SerializeField]
+        public Sprite icon;
+
+        public Sprite Icon => icon;
         
         public NavUser NavUser { get; } = new GroundUnitUser();
         

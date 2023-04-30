@@ -1,7 +1,7 @@
 using UnityEngine;
-using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using LudumDare.Utils;
 using LudumDare.Units;
 using LudumDare.Units.Navigation;
@@ -29,7 +29,7 @@ namespace LudumDare.Delivery {
         private SpatialAStar<NavNode<NodeData>, NavUser> _map;
 
 
-        public void ExecuteDelivery(List<DeliveryCommand> batch) {
+        public void ExecuteDelivery(IEnumerable<DeliveryCommand> batch) {
              _commands.AddRange(batch);
 
             if (_map == null)
@@ -53,7 +53,7 @@ namespace LudumDare.Delivery {
 
         private IReadOnlyList<PathNode> BuildPath(List<DeliveryCommand> commands, NavUser user) {
             var path = new List<PathNode>();
-            var warehouse = warehouseManager.Instance.GetAll().GetEnumerator().Current;
+            var warehouse = warehouseManager.Instance.GetAll().First();
             path.Add(new PathNode() {Pos = warehouse.GetPosition()});
 
             foreach (var cmd in commands) {

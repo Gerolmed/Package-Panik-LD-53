@@ -10,12 +10,8 @@ namespace LudumDare.WorldGraph.TilemapGraph
         [SerializeField]
         private DirectionMask directionMask;
 
-        [SerializeField]
-        private bool walkable = false;
-
         public DirectionMask DirectionMask => directionMask;
 
-        public bool Walkable => walkable;
 
 #if UNITY_EDITOR
      

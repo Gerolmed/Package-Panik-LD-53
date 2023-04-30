@@ -135,3 +135,4 @@ MonoBehaviour:
       m_Calls: []
   spriteRenderer: {fileID: 1281738902617167199}
   unit: {fileID: 11400000, guid: df4ee421cba58a641a790689b807acf0, type: 2}
+  timeSocket: {fileID: 11400000, guid: 0ebcd7f7d524e3f42aa7c0cb0379cc76, type: 2}

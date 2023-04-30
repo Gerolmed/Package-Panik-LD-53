@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace LudumDare.TimeControl
 {
@@ -6,6 +7,10 @@ namespace LudumDare.TimeControl
     {
         [SerializeField]
         private TimeControlManagerSocket socketRef;
+        
+        [Min(1)]
+        [SerializeField]
+        public float secondsPerHour = 10;
         
         private void Awake()
         {
@@ -18,6 +23,8 @@ namespace LudumDare.TimeControl
         public float TimeModifier { private set; get; }
 
         private TimeMode _timeMode;
+        // Time in minutes
+        private float _time;
 
         public TimeMode TimeMode
         {
@@ -28,5 +35,20 @@ namespace LudumDare.TimeControl
                 TimeModifier = (float) _timeMode;
             }
         }
+
+
+        private void Update()
+        {
+            _time += Time.deltaTime * 60 * TimeModifier / secondsPerHour;
+        }
+
+
+        public int MinuteOfHour =>
+            Mathf.FloorToInt(_time -
+                             (HourOfDay * 60 + DayOfWeek * 60 * 24 + Week * 7 * 60 * 24));
+        public int HourOfDay => Mathf.FloorToInt(
+            (_time - (DayOfWeek * 60 * 24 + Week * 7 * 60 * 24)) / 60f);
+        public int DayOfWeek => Mathf.FloorToInt((_time - Week * 7 * 60 * 24) / (60 * 24));
+        public int Week => Mathf.FloorToInt(_time / (7 * 60 * 24));
     }
 }

@@ -3518,7 +3518,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.8207547, g: 0.8207547, b: 0.8207547, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -5037,10 +5037,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8731099531586385801}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 218604340953282983}
+        m_TargetAssemblyTypeName: LudumDare.Hub.UI.HubUI, Assembly-CSharp
+        m_MethodName: HideHub
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -7461,6 +7461,7 @@ GameObject:
   - component: {fileID: 6329867165029555006}
   - component: {fileID: 6091280385217496837}
   - component: {fileID: 8869249218234606055}
+  - component: {fileID: 218604340953282983}
   m_Layer: 5
   m_Name: HubUI
   m_TagString: Untagged
@@ -7574,6 +7575,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &218604340953282983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8731099531586385801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2998ef7e9f176fd4b9a7b277e16cbacd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 8869249218234606055}
+  background: {fileID: 9165551520138972215}
+  foreground: {fileID: 71651758822868054}
 --- !u!1 &8769576887408303789
 GameObject:
   m_ObjectHideFlags: 0

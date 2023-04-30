@@ -923,11 +923,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2772992243410052759, guid: 4fef10c9236fd28418b68463599d0e5b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -90.2
+      value: -95.2
       objectReference: {fileID: 0}
     - target: {fileID: 2772992243410052759, guid: 4fef10c9236fd28418b68463599d0e5b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 10.5
+      value: 8.2
       objectReference: {fileID: 0}
     - target: {fileID: 2772992243410052759, guid: 4fef10c9236fd28418b68463599d0e5b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -948,14 +948,6 @@ PrefabInstance:
     - target: {fileID: 2862131343153982497, guid: 4fef10c9236fd28418b68463599d0e5b, type: 3}
       propertyPath: m_fontSizeBase
       value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 3440075426932789656, guid: 4fef10c9236fd28418b68463599d0e5b, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3440075426932789656, guid: 4fef10c9236fd28418b68463599d0e5b, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3798779895517578502, guid: 4fef10c9236fd28418b68463599d0e5b, type: 3}
       propertyPath: m_Name
@@ -1044,10 +1036,6 @@ PrefabInstance:
     - target: {fileID: 8618011627429825902, guid: 4fef10c9236fd28418b68463599d0e5b, type: 3}
       propertyPath: upgradeEvent.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8618011627429825902, guid: 4fef10c9236fd28418b68463599d0e5b, type: 3}
-      propertyPath: upgradeEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: Render
       objectReference: {fileID: 0}
     - target: {fileID: 8618011627429825902, guid: 4fef10c9236fd28418b68463599d0e5b, type: 3}
       propertyPath: upgradeEvent.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -1168,11 +1156,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2772992243410052759, guid: 6fdc1ab4ab3b25c4ba03047588d498d3, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 41.4
+      value: 36.4
       objectReference: {fileID: 0}
     - target: {fileID: 2772992243410052759, guid: 6fdc1ab4ab3b25c4ba03047588d498d3, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -3.1
+      value: -9.5
       objectReference: {fileID: 0}
     - target: {fileID: 2772992243410052759, guid: 6fdc1ab4ab3b25c4ba03047588d498d3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1218,6 +1206,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_Target
       value: 
       objectReference: {fileID: 2882647755782242150}
+    - target: {fileID: 5625857701653471986, guid: 6fdc1ab4ab3b25c4ba03047588d498d3, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5625857701653471986, guid: 6fdc1ab4ab3b25c4ba03047588d498d3, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5625857701653471986, guid: 6fdc1ab4ab3b25c4ba03047588d498d3, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7559200262170863180, guid: 6fdc1ab4ab3b25c4ba03047588d498d3, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -1233,10 +1233,6 @@ PrefabInstance:
     - target: {fileID: 8618011627429825902, guid: 6fdc1ab4ab3b25c4ba03047588d498d3, type: 3}
       propertyPath: upgradeEvent.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8618011627429825902, guid: 6fdc1ab4ab3b25c4ba03047588d498d3, type: 3}
-      propertyPath: upgradeEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: Render
       objectReference: {fileID: 0}
     - target: {fileID: 8618011627429825902, guid: 6fdc1ab4ab3b25c4ba03047588d498d3, type: 3}
       propertyPath: upgradeEvent.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -1325,6 +1321,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 45.100006
       objectReference: {fileID: 0}
+    - target: {fileID: 2636714170235562967, guid: d347f7be426703f4bb2ac0d6f8baa873, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2636714170235562967, guid: d347f7be426703f4bb2ac0d6f8baa873, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2636714170235562967, guid: d347f7be426703f4bb2ac0d6f8baa873, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2772992243410052759, guid: d347f7be426703f4bb2ac0d6f8baa873, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1391,11 +1399,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2772992243410052759, guid: d347f7be426703f4bb2ac0d6f8baa873, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -25
+      value: -31.8
       objectReference: {fileID: 0}
     - target: {fileID: 2772992243410052759, guid: d347f7be426703f4bb2ac0d6f8baa873, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 28.4
+      value: -12
       objectReference: {fileID: 0}
     - target: {fileID: 2772992243410052759, guid: d347f7be426703f4bb2ac0d6f8baa873, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1421,10 +1429,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -37.000008
       objectReference: {fileID: 0}
-    - target: {fileID: 4305188505245652698, guid: d347f7be426703f4bb2ac0d6f8baa873, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 30.600006
-      objectReference: {fileID: 0}
     - target: {fileID: 8618011627429825902, guid: d347f7be426703f4bb2ac0d6f8baa873, type: 3}
       propertyPath: upgradeEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -1436,10 +1440,6 @@ PrefabInstance:
     - target: {fileID: 8618011627429825902, guid: d347f7be426703f4bb2ac0d6f8baa873, type: 3}
       propertyPath: upgradeEvent.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8618011627429825902, guid: d347f7be426703f4bb2ac0d6f8baa873, type: 3}
-      propertyPath: upgradeEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: Render
       objectReference: {fileID: 0}
     - target: {fileID: 8618011627429825902, guid: d347f7be426703f4bb2ac0d6f8baa873, type: 3}
       propertyPath: upgradeEvent.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -1577,11 +1577,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2772992243410052759, guid: 8d8dfdd1026362a459450f3a3d102a32, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 83.9
+      value: 72.1
       objectReference: {fileID: 0}
     - target: {fileID: 2772992243410052759, guid: 8d8dfdd1026362a459450f3a3d102a32, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 9.8
+      value: 5.7
       objectReference: {fileID: 0}
     - target: {fileID: 2772992243410052759, guid: 8d8dfdd1026362a459450f3a3d102a32, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

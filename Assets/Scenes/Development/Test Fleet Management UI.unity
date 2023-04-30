@@ -1128,20 +1128,52 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2520989045140456232, guid: 4b971aa392022894ab5cef48f19a4067, type: 3}
       propertyPath: upgradeEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2520989045140456232, guid: 4b971aa392022894ab5cef48f19a4067, type: 3}
       propertyPath: upgradeEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 7433357997619537968}
     - target: {fileID: 5167301449845442693, guid: 4b971aa392022894ab5cef48f19a4067, type: 3}
+      propertyPath: upgradeEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5167301449845442693, guid: 4b971aa392022894ab5cef48f19a4067, type: 3}
+      propertyPath: upgradeEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 7433357997619537968}
+    - target: {fileID: 5167301449845442693, guid: 4b971aa392022894ab5cef48f19a4067, type: 3}
       propertyPath: upgradeEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 7433357997619537968}
+    - target: {fileID: 5167301449845442693, guid: 4b971aa392022894ab5cef48f19a4067, type: 3}
+      propertyPath: upgradeEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: UnlockUnitByUpgrade
+      objectReference: {fileID: 0}
+    - target: {fileID: 5167301449845442693, guid: 4b971aa392022894ab5cef48f19a4067, type: 3}
+      propertyPath: upgradeEvent.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: LudumDare.FleetManagement.FleetManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7083973662289810649, guid: 4b971aa392022894ab5cef48f19a4067, type: 3}
+      propertyPath: upgradeEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7083973662289810649, guid: 4b971aa392022894ab5cef48f19a4067, type: 3}
+      propertyPath: upgradeEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 7433357997619537968}
     - target: {fileID: 7083973662289810649, guid: 4b971aa392022894ab5cef48f19a4067, type: 3}
       propertyPath: upgradeEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 7433357997619537968}
+    - target: {fileID: 7083973662289810649, guid: 4b971aa392022894ab5cef48f19a4067, type: 3}
+      propertyPath: upgradeEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: UnlockUnitByUpgrade
+      objectReference: {fileID: 0}
+    - target: {fileID: 7083973662289810649, guid: 4b971aa392022894ab5cef48f19a4067, type: 3}
+      propertyPath: upgradeEvent.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: LudumDare.FleetManagement.FleetManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 7439597812487158267, guid: 4b971aa392022894ab5cef48f19a4067, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: PlayHideAnimation
@@ -1231,9 +1263,25 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8651658896215822616, guid: 4b971aa392022894ab5cef48f19a4067, type: 3}
+      propertyPath: upgradeEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8651658896215822616, guid: 4b971aa392022894ab5cef48f19a4067, type: 3}
+      propertyPath: upgradeEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 7433357997619537968}
+    - target: {fileID: 8651658896215822616, guid: 4b971aa392022894ab5cef48f19a4067, type: 3}
       propertyPath: upgradeEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 7433357997619537968}
+    - target: {fileID: 8651658896215822616, guid: 4b971aa392022894ab5cef48f19a4067, type: 3}
+      propertyPath: upgradeEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: UnlockUnitByUpgrade
+      objectReference: {fileID: 0}
+    - target: {fileID: 8651658896215822616, guid: 4b971aa392022894ab5cef48f19a4067, type: 3}
+      propertyPath: upgradeEvent.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: LudumDare.FleetManagement.FleetManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 8731099531586385801, guid: 4b971aa392022894ab5cef48f19a4067, type: 3}
       propertyPath: m_Name
       value: HubUI

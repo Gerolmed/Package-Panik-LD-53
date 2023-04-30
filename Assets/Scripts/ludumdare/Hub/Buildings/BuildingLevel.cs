@@ -1,4 +1,5 @@
 using UnityEngine;
+using LudumDare.Units;
 
 namespace LudumDare.Hub.Buildings
 {
@@ -9,6 +10,7 @@ namespace LudumDare.Hub.Buildings
         [SerializeField] private string description;
         [SerializeField] private int price;
         [SerializeField] private RuntimeAnimatorController animatorController = null;
+        [SerializeField] private DeliveryUnit unitUnlocked;
         public Sprite Sprite => sprite;
         public string Description => description;
         public int Price => price;

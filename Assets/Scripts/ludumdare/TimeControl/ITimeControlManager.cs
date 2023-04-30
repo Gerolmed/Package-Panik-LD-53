@@ -16,8 +16,8 @@ namespace LudumDare.TimeControl
 
     public enum TimeMode
     {
-        Paused,
-        Normal,
-        Fast
+        Paused = 0,
+        Normal = 1,
+        Fast = 4
     }
 }

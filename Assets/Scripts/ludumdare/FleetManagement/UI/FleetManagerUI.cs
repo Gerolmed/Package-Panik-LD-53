@@ -9,6 +9,7 @@ namespace LudumDare.FleetManagement.UI
         private float _lastY = 0f;
 
         [SerializeField] private GameObject rendererTemplate;
+        [SerializeField] private FleetManagerSocket fleetManagerSocket;
 
         public void AddRenderer(DeliveryUnit unitType)
         {
@@ -17,7 +18,12 @@ namespace LudumDare.FleetManagement.UI
 
             _lastY -= newPanel.GetComponent<RectTransform>().rect.height;
 
-            _unitRenderers.Add(unitType, newPanel.GetComponent<DeliveryUnitUIRenderer>());
+            var newRenderer = newPanel.GetComponent<DeliveryUnitUIRenderer>();
+
+            newRenderer.BuyButton.onClick.AddListener(() => fleetManagerSocket.Instance.BuyUnit(unitType));
+            newRenderer.RemoveButton.onClick.AddListener(() => fleetManagerSocket.Instance.RemoveUnit(unitType));
+
+            _unitRenderers.Add(unitType, newRenderer);
             _unitRenderers[unitType].Render(unitType);
         }
 

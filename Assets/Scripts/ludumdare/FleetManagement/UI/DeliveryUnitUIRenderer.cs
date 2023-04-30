@@ -12,6 +12,11 @@ namespace LudumDare.FleetManagement.UI
         [SerializeField] private TMP_Text maintenanceCostTMP;
         [SerializeField] private TMP_Text purchaseCostTMP; 
         [SerializeField] private TMP_Text amountTMP; 
+        [SerializeField] private Button buyButton; 
+        [SerializeField] private Button removeButton;
+
+        public Button BuyButton => buyButton; 
+        public Button RemoveButton => removeButton; 
 
         public void Render(DeliveryUnit unitType)
         {
@@ -20,7 +25,6 @@ namespace LudumDare.FleetManagement.UI
             weightTMP.text = unitType.TotalWeight.ToString() + " / day";
             maintenanceCostTMP.text = unitType.MaintenanceCost.ToString() + " / day";
             purchaseCostTMP.text = unitType.PurchaseCost.ToString();
-            // amountTMP.text = "0";
         }
 
         public void RenderAmount(uint amount)

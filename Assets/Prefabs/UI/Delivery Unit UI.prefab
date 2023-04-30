@@ -1380,3 +1380,5 @@ MonoBehaviour:
   maintenanceCostTMP: {fileID: 1994235587460458457}
   purchaseCostTMP: {fileID: 5494299080869383062}
   amountTMP: {fileID: 5432864326483686846}
+  buyButton: {fileID: 2460475953106523939}
+  removeButton: {fileID: 873004627915279954}

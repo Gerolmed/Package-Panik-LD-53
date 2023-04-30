@@ -117,6 +117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rendererTemplate: {fileID: 8985713016023436186, guid: 382f64980ac1a974c9b7b070ed806b5a, type: 3}
+  fleetManagerSocket: {fileID: 11400000, guid: af8ed1ebeb2108f468b384e0957fd876, type: 2}
 --- !u!1 &8076553518454392557
 GameObject:
   m_ObjectHideFlags: 0

@@ -399,6 +399,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b971aa392022894ab5cef48f19a4067, type: 3}
+--- !u!114 &196875234 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2214810033609314896, guid: 22d145a5adf7fa3438f5fb420bc84e98, type: 3}
+  m_PrefabInstance: {fileID: 8759056839746832532}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25840cd8a985f214abcb99ef0ecf3d2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &237058561
 GameObject:
   m_ObjectHideFlags: 0
@@ -888,7 +899,19 @@ MonoBehaviour:
   tilemap: {fileID: 953809832}
   onGenerate:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 196875234}
+        m_TargetAssemblyTypeName: LudumDare.Delivery.DeliveryResolver, Assembly-CSharp
+        m_MethodName: AssignGraph
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &846148308
 Transform:
   m_ObjectHideFlags: 0

@@ -10,7 +10,10 @@ namespace LudumDare.TimeControl
         
         [Min(1)]
         [SerializeField]
-        public float secondsPerHour = 10;
+        public float secondsPerHour = 20;
+        [Min(1)]
+        [SerializeField]
+        public float hoursPerCycle = 6;
         
         private void Awake()
         {

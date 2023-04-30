@@ -6,7 +6,7 @@ using LudumDare.Utils;
 using LudumDare.Units;
 using LudumDare.Units.Navigation;
 using LudumDare.WorldGraph;
-using LudumDare.WorldGraph.Warehouses.Impl;
+using LudumDare.WorldGraph.Warehouses;
 
 
 namespace LudumDare.Delivery {
@@ -18,7 +18,7 @@ namespace LudumDare.Delivery {
         private DeliveryUnitStorageSocket unitStorage;
 
         [SerializeField]
-        private WarehouseManager warehouseManager;
+        private WarehouseManagerSocket warehouseManager;
 
         [SerializeField]
         private UnitNavigator unitNavigator;
@@ -53,7 +53,7 @@ namespace LudumDare.Delivery {
 
         private IReadOnlyList<PathNode> BuildPath(List<DeliveryCommand> commands, NavUser user) {
             var path = new List<PathNode>();
-            var warehouse = warehouseManager.GetAll().GetEnumerator().Current;
+            var warehouse = warehouseManager.Instance.GetAll().GetEnumerator().Current;
             path.Add(new PathNode() {Pos = warehouse.GetPosition()});
 
             foreach (var cmd in commands) {

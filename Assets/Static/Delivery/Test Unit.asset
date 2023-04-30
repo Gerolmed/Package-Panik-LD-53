@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 136586f01c3f44f1b0fdf71a5d789bb4, type: 3}
   m_Name: Test Unit
   m_EditorClassIdentifier: 
-  deliveryType: 0
   navType: 0
+  unitType: 0
   totalWeight: 1
   maintenanceCost: 1
   purchaseCost: 1
-  facingUp: {fileID: 21300000, guid: 61b99fb6a26120544a67c83c224342a0, type: 3}
-  facingRight: {fileID: 21300000, guid: 0bd849cce9c5c2049833a7ac85dd787d, type: 3}
-  facingDown: {fileID: 21300000, guid: 1b50421f108179241a61f01afa8b6099, type: 3}
-  facingLeft: {fileID: 21300000, guid: b2541005ca6214e4792a917b39ae3d30, type: 3}
+  facingUp: {fileID: 21300000, guid: 7dd67f1e0278a0649b1cc0e0e0345b10, type: 3}
+  facingRight: {fileID: 21300000, guid: acc33e8d7000443409e5a522e2ae4808, type: 3}
+  facingDown: {fileID: 21300000, guid: e7ccc5837a1f0e544a71cb1682462b02, type: 3}
+  facingLeft: {fileID: 21300000, guid: 07819f2f56537ea4b86fb48cc87b907a, type: 3}

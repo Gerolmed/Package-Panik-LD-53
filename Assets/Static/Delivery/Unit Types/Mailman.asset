@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: Mailman
   m_EditorClassIdentifier: 
   navType: 0
+  unitType: 0
   totalWeight: 1
   maintenanceCost: 1
   purchaseCost: 1
-  facingUp: {fileID: 0}
-  facingRight: {fileID: 0}
-  facingDown: {fileID: 0}
-  facingLeft: {fileID: 0}
+  facingUp: {fileID: 21300000, guid: 7dd67f1e0278a0649b1cc0e0e0345b10, type: 3}
+  facingRight: {fileID: 21300000, guid: acc33e8d7000443409e5a522e2ae4808, type: 3}
+  facingDown: {fileID: 21300000, guid: e7ccc5837a1f0e544a71cb1682462b02, type: 3}
+  facingLeft: {fileID: 21300000, guid: 07819f2f56537ea4b86fb48cc87b907a, type: 3}

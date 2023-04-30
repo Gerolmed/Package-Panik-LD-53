@@ -10,13 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 136586f01c3f44f1b0fdf71a5d789bb4, type: 3}
-  m_Name: MailmanBicycle
+  m_Name: PackageUnit2
   m_EditorClassIdentifier: 
   navType: 0
+  unitType: 0
+  icon: {fileID: 21300000, guid: ca83b883425eb1f4bbf86a031710fb70, type: 3}
   totalWeight: 3
   maintenanceCost: 1
   purchaseCost: 1
-  facingUp: {fileID: 0}
-  facingRight: {fileID: 0}
-  facingDown: {fileID: 0}
-  facingLeft: {fileID: 0}
+  facingUp: {fileID: 21300000, guid: b1c82f070c993bb4d9ebb78824876cb9, type: 3}
+  facingRight: {fileID: 21300000, guid: b7fdf11199df30e47b9eccfdc90ec1aa, type: 3}
+  facingDown: {fileID: 21300000, guid: fe4185bfa4311434fb9623f4612b0ebf, type: 3}
+  facingLeft: {fileID: 21300000, guid: 48843cf6909449e459d01d94b3ffdeb2, type: 3}

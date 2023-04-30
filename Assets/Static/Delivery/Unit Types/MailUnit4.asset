@@ -10,13 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 136586f01c3f44f1b0fdf71a5d789bb4, type: 3}
-  m_Name: MailTruck2
+  m_Name: MailUnit4
   m_EditorClassIdentifier: 
   navType: 0
+  unitType: 0
+  icon: {fileID: 21300000, guid: 79d7b2ab130e4d340a82912efb8da747, type: 3}
   totalWeight: 10
   maintenanceCost: 1
   purchaseCost: 1
-  facingUp: {fileID: 0}
-  facingRight: {fileID: 0}
-  facingDown: {fileID: 0}
-  facingLeft: {fileID: 0}
+  facingUp: {fileID: 21300000, guid: cc2338fbefa00004eaab639943975591, type: 3}
+  facingRight: {fileID: 21300000, guid: 801999f8094a47c46a5afd58a29c1766, type: 3}
+  facingDown: {fileID: 21300000, guid: 7d43da753b35f994e92401dabb63e9f6, type: 3}
+  facingLeft: {fileID: 21300000, guid: f3e02f7f462cfe64985428ca6a044407, type: 3}

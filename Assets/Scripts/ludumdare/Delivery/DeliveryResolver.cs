@@ -89,6 +89,7 @@ namespace LudumDare.Delivery {
             var renderInstance = Instantiate(unitNavigator);
             yield return renderInstance.StartTraversal(path);
             unit.Occupied = false;
+            Destroy(renderInstance.gameObject);
         }    
 
         public void AssignGraph(Graph<NodeData> graph) {

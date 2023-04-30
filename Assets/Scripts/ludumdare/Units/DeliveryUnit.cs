@@ -15,6 +15,10 @@ namespace LudumDare.Units
         private NavigationType navType;
 
         public NavigationType NavType => navType;
+        [SerializeField]
+        private UnitType unitType;
+
+        public UnitType UnitType => unitType;
         
         public NavUser NavUser { get; } = new GroundUnitUser();
         
@@ -56,5 +60,11 @@ namespace LudumDare.Units
     {
             Mail,
             Package
+    }
+    public enum UnitType
+    {
+            MailTruck,
+            PackageTruck,
+            Drone,
     }
 }

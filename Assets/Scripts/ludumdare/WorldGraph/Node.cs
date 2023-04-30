@@ -17,15 +17,18 @@ namespace LudumDare.WorldGraph
         public List<Node<T>> Links { get; } = new();
         
 
+        private bool _walkable;
+
         public int Id { get; }
 
 
-        public Node(Vector2Int pos, object data, DirectionMask directions, int id)
+        public Node(Vector2Int pos, bool walkable, object data, DirectionMask directions, int id)
         {
             Pos = pos;
             Data = data;
             Directions = directions;
             Id = id;
+            _walkable = walkable;
         }
 
 
@@ -41,7 +44,7 @@ namespace LudumDare.WorldGraph
         }
 
         public bool IsWalkable(NavUser user) {
-            return true;
+            return _walkable;
         }
 
     }

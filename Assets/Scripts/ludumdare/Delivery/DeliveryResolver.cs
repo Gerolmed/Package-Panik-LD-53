@@ -1,7 +1,8 @@
 using UnityEngine;
+using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
+using System.Collections.Generic;
 using LudumDare.Utils;
 using LudumDare.Units;
 using LudumDare.Units.Navigation;
@@ -29,7 +30,7 @@ namespace LudumDare.Delivery {
         private SpatialAStar<NavNode<NodeData>, NavUser> _map;
 
 
-        public void ExecuteDelivery(IEnumerable<DeliveryCommand> batch) {
+        public void ExecuteDelivery(List<DeliveryCommand> batch) {
              _commands.AddRange(batch);
 
             if (_map == null)
@@ -43,8 +44,10 @@ namespace LudumDare.Delivery {
             foreach (var unit in units) {
                 if (unit.Occupied)
                     continue;
+
                 var command = _commands.Pop(command => command.DeliveryType == unit.Type.DeliveryType);
                 if(command == null) continue;
+
                 var commandList = new List<DeliveryCommand>();
                 commandList.Add(command);
                 DispatchUnit(new List<DeliveryCommand>(commandList), unit);
@@ -65,7 +68,7 @@ namespace LudumDare.Delivery {
         }
 
         private void MoveToDestintion(Vector2Int dest, List<PathNode> path, NavUser user) {
-            var current = _graph.GetRelativePos(path[-1].Pos);
+            var current = _graph.GetRelativePos(path.Last().Pos);
             var relDest = _graph.GetRelativePos(dest);
             var steps = _map.Search(current, relDest, user);
             if(steps == null) return;

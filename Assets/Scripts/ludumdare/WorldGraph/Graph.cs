@@ -41,7 +41,7 @@ namespace LudumDare.WorldGraph
             return new Vector2Int(pos.x - _leftBound, pos.y - _botBound);
         }
 
-        public Node<T> AddNodeAt(Vector2Int pos, T data,
+        public Node<T> AddNodeAt(Vector2Int pos, T data, bool walkable,
             DirectionMask directions = DirectionMask.None)
         {
             if(pos.x < _leftBound) _leftBound = pos.x;
@@ -49,7 +49,7 @@ namespace LudumDare.WorldGraph
             if(pos.y < _botBound) _botBound = pos.y;
             if(pos.y > _topBound) _topBound = pos.y;   
 
-            var node = new Node<T>(pos, data, directions, _idCounter++);
+            var node = new Node<T>(pos, walkable, data, directions, _idCounter++);
 
             NodeGraph.Add(pos, node);
             UpdateLinks(node);

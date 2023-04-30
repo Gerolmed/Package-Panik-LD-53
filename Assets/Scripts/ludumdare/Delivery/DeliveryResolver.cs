@@ -80,10 +80,8 @@ namespace LudumDare.Delivery {
         }
 
         private void DispatchUnit(List<DeliveryCommand> commands, IUnitInstance unit) {
-            Debug.Log("dispatching unit");
             unit.Occupied = true;
             var path = BuildPath(commands, unit.Type.NavUser);
-            Debug.Log("patch built");
             StartCoroutine(DispatchUnitInternal(path, unit));
         }
 

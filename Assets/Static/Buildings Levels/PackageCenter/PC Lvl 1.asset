@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: PC Lvl 1
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 578f844e5ecf43e4c9512a41f4fdfa70, type: 3}
-  description: build
+  hollowSprite: {fileID: 21300000, guid: 2d3da5d55ac444244a7e6e9f45252eb9, type: 3}
   price: 0
+  weight: 3
   animatorController: {fileID: 0}
   unitUnlocked: {fileID: 11400000, guid: 6ce4c8c2a1a951945bd2e00b6402672b, type: 2}

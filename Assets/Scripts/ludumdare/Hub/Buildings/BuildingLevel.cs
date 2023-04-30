@@ -7,14 +7,18 @@ namespace LudumDare.Hub.Buildings
     public class BuildingLevel : ScriptableObject
     {
         [SerializeField] private Sprite sprite;
-        [SerializeField] private string description;
+        [SerializeField] private Sprite hollowSprite;
         [SerializeField] private int price;
+        [SerializeField] private int weight;
         [SerializeField] private RuntimeAnimatorController animatorController = null;
+        [SerializeField] private RuntimeAnimatorController hollowAnimatorController = null;
         [SerializeField] private DeliveryUnit unitUnlocked;
         public Sprite Sprite => sprite;
-        public string Description => description;
+        public Sprite HollowSprite => hollowSprite;
         public int Price => price;
+        public int Weight => weight;
         public RuntimeAnimatorController AnimatorController => animatorController;
+        public RuntimeAnimatorController HollowAnimatorController => hollowAnimatorController;
         public DeliveryUnit UnitUnlocked => unitUnlocked;
     }
 }

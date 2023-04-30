@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: PC Lvl 2
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: e9ee85c6f44b50d4cad624ae78a867d5, type: 3}
-  description: upgrade to 2
+  hollowSprite: {fileID: 21300000, guid: 5dbef0cba65f8ac488a962ca402202b6, type: 3}
   price: 0
+  weight: 5
   animatorController: {fileID: 0}
   unitUnlocked: {fileID: 11400000, guid: f4785b35c1780c840879901887027602, type: 2}

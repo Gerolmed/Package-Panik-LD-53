@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: AO Lvl 0
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: c7bf13bc537f48440877596e98dd342b, type: 3}
-  description: 
+  hollowSprite: {fileID: 21300000, guid: ee25901fd54bb8743bb59cf0577dd606, type: 3}
   price: 0
+  weight: -1
   animatorController: {fileID: 0}
+  hollowAnimatorController: {fileID: 0}
   unitUnlocked: {fileID: 0}

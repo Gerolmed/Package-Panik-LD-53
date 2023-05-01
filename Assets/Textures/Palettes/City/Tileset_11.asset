@@ -35,4 +35,5 @@ MonoBehaviour:
   m_Flags: 1
   m_ColliderType: 1
   directionMask: 9
-  walkable: 1
+  isTarget: 0
+  isWarehouseLocation: 1

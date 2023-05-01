@@ -26,6 +26,7 @@ namespace LudumDare.TimeControl
         private float _time;
         private int _previousCycle = -1;
         public long Cycle { get; set; } = -1;
+        public int CyclesPerDay => Mathf.FloorToInt(24 / hoursPerCycle);
 
         public TimeMode TimeMode
         {

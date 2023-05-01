@@ -45,9 +45,14 @@ namespace LudumDare.Delivery
                 var age = cycle - (int) (cyclesPerDay * district.UnlockedSince / 60 / 24);
  
                 var targets = DistributeOnto(possibleTargets, (int) _packetDistributionFunction.GetRandomValue(age) / 2);
+                var droneTargets = DistributeOnto(possibleTargets, (int) (_packetDistributionFunction.GetRandomValue(age) / 10 - 4));
                 
-                resolver.ExecuteDelivery(targets.Select(target => new DeliveryCommand(target, DeliveryType.Mail)));
-                resolver.ExecuteDelivery(targets.Select(target => new DeliveryCommand(target, DeliveryType.Package)));
+                var commands = new List<DeliveryCommand>();
+                commands.AddRange(targets.Select(target => new DeliveryCommand(target, DeliveryType.Mail)));
+                commands.AddRange(targets.Select(target => new DeliveryCommand(target, DeliveryType.Package)));
+                commands.AddRange(droneTargets.Select(target => new DeliveryCommand(target, DeliveryType.DronePackage)));
+
+                resolver.ExecuteDelivery(commands);
             }
         }
 

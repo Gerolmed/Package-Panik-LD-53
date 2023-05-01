@@ -101,6 +101,22 @@ namespace LudumDare.Delivery
                 
                 if(connections == null) break;
             }
+            
+            var droneCommands = _commands.FindAll(cmd => cmd.DeliveryType == DeliveryType.DronePackage).Take(100).ToList();
+            var droneeUnits = storage.GetAvailableUnits().Where((unit) => (unit.Type.DeliveryType == DeliveryType.DronePackage && !unit.Occupied));
+            (clusterStorage, connections, cluster) = (null, null, null);
+            foreach (var unit in packageUnits)
+            {
+                (cluster, clusterStorage, connections) = CluserUtil.FindFirstCluster<DeliveryCommand>(mailCommands, Distance, (cluster) => cluster.Count, 2, clusterStorage, connections);
+
+                if(cluster == null || cluster.Count == 0) continue;
+                DispatchUnit(cluster.Select(cmd => cmd.Pos).ToList(), unit);
+
+                proceessedCommands.AddRange(cluster);
+                cluster.Clear();
+                
+                if(connections == null) break;
+            }
 
             _commands.RemoveAll((cmd) => proceessedCommands.Contains(cmd));
 

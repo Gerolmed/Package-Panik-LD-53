@@ -54,10 +54,9 @@ namespace LudumDare.Districts
         }
 
 
-        public void Setup(List<District> districts)
+        public void Add(District district)
         {
-            _unlocked.Clear();
-            _districts = districts;
+            _districts.Add(district);
         }
 
 

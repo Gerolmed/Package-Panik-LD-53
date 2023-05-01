@@ -11,6 +11,7 @@ namespace LudumDare.FleetManagement
     {
         [SerializeField] private FleetManagerSocket fleetManagerSocket;
         [SerializeField] private MoneyManagerSocket moneyManagerSocket;
+        [SerializeField] private DeliveryUnitStorageSocket deliveryUnitStorageSocket;
 
         [SerializeField] private UnlockUnitEvent unlockUnitEvent;
         [SerializeField] private UpdateUnitAmountEvent updateAmountEvent;
@@ -37,6 +38,8 @@ namespace LudumDare.FleetManagement
             {
                 UnitTypesAmounts[unitType] += 1;
                 updateAmountEvent.Invoke(unitType, UnitTypesAmounts[unitType]);
+
+                deliveryUnitStorageSocket.Instance.AddUnit(unitType);
             }
         }
 
@@ -47,6 +50,8 @@ namespace LudumDare.FleetManagement
 
             UnitTypesAmounts[unitType] -= 1;
             updateAmountEvent.Invoke(unitType, UnitTypesAmounts[unitType]);
+
+            deliveryUnitStorageSocket.Instance.RemoveUnit(unitType);
         }
     }
 

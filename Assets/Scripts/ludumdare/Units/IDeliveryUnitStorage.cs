@@ -9,5 +9,6 @@ namespace LudumDare.Units
 
 
         void AddUnit(DeliveryUnit unit);
+        void RemoveUnit(DeliveryUnit unit);
     }
 }

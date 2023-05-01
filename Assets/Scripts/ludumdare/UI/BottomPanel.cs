@@ -11,6 +11,8 @@ namespace LudumDare.UI
 
         [SerializeField] private AnalyticsUI analyticsUI;
         [SerializeField] private FleetManagerUI fleetManagerUI;
+
+        [SerializeField] private Animator barAnimator;
         public void ChangeMiddleButton()
         {
             hubButton.gameObject.SetActive(!hubButton.gameObject.activeSelf);
@@ -37,6 +39,19 @@ namespace LudumDare.UI
                 if (affectMiddleButton)
                     ChangeMiddleButton();
             }
+        }
+
+        public void ShowBar()
+        {
+            barAnimator.SetBool("Hide", false);
+        }
+
+        public void BarAnimationOnSideButtonPress()
+        {
+            if (!analyticsUI.IsActive && !fleetManagerUI.IsActive)
+                barAnimator.SetBool("Hide", false);
+            else
+                barAnimator.SetBool("Hide", true);
         }
     }
 }

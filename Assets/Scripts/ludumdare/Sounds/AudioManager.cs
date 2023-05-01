@@ -28,7 +28,7 @@ namespace LudumDare.Sounds
         }
 
 
-        private void Awake()
+        private void OnEnable()
         {
             audioMixer.GetFloat("MusicVolume", out var musicVolume);
             audioMixer.GetFloat("SFXVolume", out var sfxVolume);

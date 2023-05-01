@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using JetBrains.Annotations;
+using LudumDare.MoneySystem;
 using LudumDare.TimeControl;
 using UnityEngine;
 using UnityEngine.Events;
@@ -16,6 +17,8 @@ namespace LudumDare.Districts
         private TimeControlManagerSocket timeControlManager;
         [SerializeField]
         private DistrictEvent onUnlock;
+        [SerializeField]
+        private MoneyManagerSocket moneyManagerSocket;
 
         private List<District> _districts = new();
         private readonly HashSet<string> _unlocked = new();
@@ -49,6 +52,7 @@ namespace LudumDare.Districts
             district.UnlockedSince = timeControlManager.Instance.IngameTime;
             _unlocked.Add(district.ID);
             onUnlock.Invoke(district);
+            moneyManagerSocket.Instance.TryDeduct(district.Price);
         }
 
 

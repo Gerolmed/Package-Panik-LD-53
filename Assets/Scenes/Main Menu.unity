@@ -1253,6 +1253,38 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3132992807188002064, guid: 1c752a3a9d7e30f42afb01dc94e8430e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3132992807188002064, guid: 1c752a3a9d7e30f42afb01dc94e8430e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3132992807188002064, guid: 1c752a3a9d7e30f42afb01dc94e8430e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1631592665}
+    - target: {fileID: 3132992807188002064, guid: 1c752a3a9d7e30f42afb01dc94e8430e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3132992807188002064, guid: 1c752a3a9d7e30f42afb01dc94e8430e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 3132992807188002064, guid: 1c752a3a9d7e30f42afb01dc94e8430e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3132992807188002064, guid: 1c752a3a9d7e30f42afb01dc94e8430e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3132992807188002064, guid: 1c752a3a9d7e30f42afb01dc94e8430e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3314838586091011530, guid: 1c752a3a9d7e30f42afb01dc94e8430e, type: 3}
       propertyPath: m_Pivot.x
       value: 0

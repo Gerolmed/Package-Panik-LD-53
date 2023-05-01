@@ -17,7 +17,7 @@ namespace LudumDare.TimeControl
         public float hoursPerCycle = 6;
 
         [SerializeField]
-        public UnityIntEvent onCycle;
+        public UnityLongEvent onCycle;
         
         public float TimeModifier { private set; get; }
 
@@ -25,6 +25,7 @@ namespace LudumDare.TimeControl
         // Time in minutes
         private float _time;
         private int _previousCycle = -1;
+        public long Cycle { get; set; } = -1;
 
         public TimeMode TimeMode
         {
@@ -54,7 +55,8 @@ namespace LudumDare.TimeControl
             var currentCycle = Mathf.FloorToInt(HourOfDay / hoursPerCycle);
             if (currentCycle == _previousCycle) return;
             _previousCycle = currentCycle;
-            onCycle.Invoke(currentCycle);
+            Cycle++;
+            onCycle.Invoke(Cycle);
         }
 
         public int MinuteOfHour =>
@@ -68,5 +70,5 @@ namespace LudumDare.TimeControl
     }
     
     [Serializable]
-    public class UnityIntEvent: UnityEvent<int> {}
+    public class UnityLongEvent: UnityEvent<long> {}
 }

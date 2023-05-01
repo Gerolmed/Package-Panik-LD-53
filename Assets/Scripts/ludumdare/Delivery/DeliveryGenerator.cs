@@ -31,14 +31,14 @@ namespace LudumDare.Delivery
                 .ToHashSet();
         }
         
-        public void DoGenerate(int cycle)
+        public void DoGenerate(long cycle)
         {
             
             foreach (var district in districtManagerSocket.Instance.GetUnlocked())
             {
                 var possibleTargets = _targetCache.GetOrCreate(district.ID,
                     () => CollectAllFor(district));
-
+                
                 var targets = DistributeOnto(possibleTargets, 5);
                 resolver.ExecuteDelivery(targets.Select(target => new DeliveryCommand(target, DeliveryType.Mail)));
 

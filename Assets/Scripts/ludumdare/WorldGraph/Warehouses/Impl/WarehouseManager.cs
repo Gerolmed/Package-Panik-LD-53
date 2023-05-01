@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -8,6 +9,9 @@ namespace LudumDare.WorldGraph.Warehouses.Impl
     {
         [SerializeField]
         private WarehouseManagerSocket socketRef;
+
+        private Warehouse[] _warehouses;
+
 
         [SerializeField]
         private Camera mainCam;
@@ -29,15 +33,31 @@ namespace LudumDare.WorldGraph.Warehouses.Impl
         private Color invalidGhostColor;
         public Color InvalidGhostColor => invalidGhostColor;
 
+        [SerializeField]
+        private GameObject[] windowsToCancelMoving;
+
         private void Awake()
         {
             socketRef.Instance = this;
         }
 
+        private void Start() {
+            _warehouses = GetComponentsInChildren<Warehouse>();
+        }
+
+        private void Update() {
+            if (windowsToCancelMoving.Any(window => window.activeSelf))
+                CancelMoving();
+        }
+
+        private void CancelMoving()
+        {
+            _warehouses.ToList().ForEach(w => w.CancelMoving());
+        }
 
         public IEnumerable<Warehouse> GetAll()
         {
-            return GetComponentsInChildren<Warehouse>();
+            return _warehouses;
         }
     }
 }

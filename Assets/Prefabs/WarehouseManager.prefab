@@ -51,6 +51,11 @@ MonoBehaviour:
   ghostWarehouse: {fileID: 8581800649489508843, guid: 2db00b3eecc38e14693268dd31368264, type: 3}
   validGhostColor: {r: 1, g: 1, b: 1, a: 0.5882353}
   invalidGhostColor: {r: 1, g: 0, b: 0, a: 0.88235295}
+  windowsToCancelMoving:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1001 &4055105271914621618
 PrefabInstance:
   m_ObjectHideFlags: 0

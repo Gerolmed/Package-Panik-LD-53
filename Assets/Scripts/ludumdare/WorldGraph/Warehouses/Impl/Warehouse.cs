@@ -1,10 +1,11 @@
 ﻿using LudumDare.WorldGraph.TilemapGraph;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.Tilemaps;
 
 namespace LudumDare.WorldGraph.Warehouses.Impl
 {
-    public class Warehouse: MonoBehaviour, IWarehouse
+    public class Warehouse: MonoBehaviour, IWarehouse, IPointerClickHandler
     {
         private WarehouseManager _warehouseManager;
         private bool _ghostFollowMouse = false;
@@ -38,7 +39,10 @@ namespace LudumDare.WorldGraph.Warehouses.Impl
 
         private void PutWarehouse()
         {
-            if (!_ghostTileValid)
+            if (!_ghostTileValid || EventSystem.current.IsPointerOverGameObject())
+                return;
+
+            if (EventSystem.current.IsPointerOverGameObject())
                 return;
 
             transform.position = _ghostWarehouseInstance.transform.position;
@@ -51,7 +55,7 @@ namespace LudumDare.WorldGraph.Warehouses.Impl
             _ghostTileValid = false;
         }
 
-        private void CancelMoving()
+        public void CancelMoving()
         {
             _ghostFollowMouse = false;
             Destroy(_ghostWarehouseInstance);
@@ -66,7 +70,7 @@ namespace LudumDare.WorldGraph.Warehouses.Impl
             {
                 GhostFollowMouse();
 
-                if (!_ghostTileValid)
+                if (!_ghostTileValid || EventSystem.current.IsPointerOverGameObject())
                     _ghostInstanceRenderer.color = _warehouseManager.InvalidGhostColor;
                 else
                     _ghostInstanceRenderer.color = _warehouseManager.ValidGhostColor;
@@ -89,6 +93,12 @@ namespace LudumDare.WorldGraph.Warehouses.Impl
                 if (!_isMouseDown && Input.GetMouseButtonDown(1))
                     CancelMoving();
             }
+        }
+
+        public void OnPointerClick(PointerEventData eventData)
+        {
+            if (eventData.button == PointerEventData.InputButton.Left && !_ghostFollowMouse)
+                PickWarehouse();
         }
 
         private void GhostFollowMouse()

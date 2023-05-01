@@ -49,6 +49,13 @@ namespace LudumDare.MoneySystem
             Balance -= value;
             return true;
         }
+
+
+        public void Deduct(int value, TransactionType transactionType = default)
+        {
+            _history.ComputeOrCreate(transactionType, () => 0, val => val - value);
+            Balance -= value;
+        }
     }
 
     public enum TransactionType

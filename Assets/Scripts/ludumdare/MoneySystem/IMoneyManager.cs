@@ -10,5 +10,6 @@ namespace LudumDare.MoneySystem
 
         public void AddMoney(int value, TransactionType transactionType = default);
         public bool TryDeduct(int value, TransactionType transactionType = default);
+        public void Deduct(int value, TransactionType transactionType = default);
     }
 }

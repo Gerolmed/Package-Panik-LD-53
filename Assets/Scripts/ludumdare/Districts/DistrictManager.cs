@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using JetBrains.Annotations;
+using LudumDare.TimeControl;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -11,6 +12,8 @@ namespace LudumDare.Districts
     {
         [SerializeField]
         private DistrictManagerSocket districtManagerSocket;
+        [SerializeField]
+        private TimeControlManagerSocket timeControlManager;
         [SerializeField]
         private DistrictEvent onUnlock;
 
@@ -43,6 +46,7 @@ namespace LudumDare.Districts
 
         public void Unlock(District district)
         {
+            district.UnlockedSince = timeControlManager.Instance.IngameTime;
             _unlocked.Add(district.ID);
             onUnlock.Invoke(district);
         }

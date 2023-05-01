@@ -14,7 +14,11 @@ namespace LudumDare.Utils.Camera
         private Vector3 _lastMousePos;
 
         private const float Speed = 7;
+#if UNITY_EDITOR
+        private const float MouseSpeed = 100;
+#else
         private const float MouseSpeed = 10;
+#endif
         
         private void Update()
         {
@@ -61,17 +65,11 @@ namespace LudumDare.Utils.Camera
         {
             if (!Input.GetMouseButton(0)) return false;
 
-            if (Input.GetMouseButtonDown(0))
-            {
-                _lastMousePos = Input.mousePosition;
-            }
+            var x = Input.GetAxisRaw("Mouse X");
+            var y = Input.GetAxisRaw("Mouse Y");
+            var speedMod = Time.deltaTime * MouseSpeed * CameraZoomSpeed();
             
-            
-            var current = Input.mousePosition;
-            var delta = Input.mousePosition - _lastMousePos;
-            _lastMousePos = current;
-            
-            transform.position = LimitPosition(transform.position + -delta * Time.deltaTime * MouseSpeed * CameraZoomSpeed());
+            transform.position = LimitPosition(transform.position - new Vector3(x * speedMod, y * speedMod));
 
             return true;
         }

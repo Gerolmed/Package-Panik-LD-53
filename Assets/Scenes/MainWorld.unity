@@ -220,7 +220,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 67264660}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.18, y: 3.12, z: -10}
+  m_LocalPosition: {x: -0.18, y: 1.94, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2281,6 +2281,18 @@ MonoBehaviour:
       - m_Target: {fileID: 196875234}
         m_TargetAssemblyTypeName: LudumDare.Delivery.DeliveryResolver, Assembly-CSharp
         m_MethodName: AssignGraph
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8759056839746832534}
+        m_TargetAssemblyTypeName: LudumDare.Delivery.DeliveryGenerator, Assembly-CSharp
+        m_MethodName: OnGraph
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -18269,7 +18281,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6407555126271283424, guid: 976f6df6af1c65b4dae5c4463fcf2075, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 8.895
       objectReference: {fileID: 0}
     - target: {fileID: 6407555126271283424, guid: 976f6df6af1c65b4dae5c4463fcf2075, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -20332,7 +20344,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6407555126271283424, guid: 976f6df6af1c65b4dae5c4463fcf2075, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 8.895
       objectReference: {fileID: 0}
     - target: {fileID: 6407555126271283424, guid: 976f6df6af1c65b4dae5c4463fcf2075, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -20593,6 +20605,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Delivery Resolver
       objectReference: {fileID: 0}
+    - target: {fileID: 7019856810442286750, guid: 22d145a5adf7fa3438f5fb420bc84e98, type: 3}
+      propertyPath: districtManagerSocket
+      value: 
+      objectReference: {fileID: 11400000, guid: 903803c09a1661f469ae28c48d9ffbc0, type: 2}
     - target: {fileID: 7058368217920530285, guid: 22d145a5adf7fa3438f5fb420bc84e98, type: 3}
       propertyPath: m_RootOrder
       value: 5

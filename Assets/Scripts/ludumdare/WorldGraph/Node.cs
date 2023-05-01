@@ -14,14 +14,14 @@ namespace LudumDare.WorldGraph
     public class Node<T>: NavNode<T> {
 
         public Vector2Int Pos { get; }
-        public object Data { get; }
+        public T Data { get; }
         public DirectionMask Directions { get; }
         public List<Node<T>> Links { get; } = new();
         
         public int Id { get; }
 
 
-        public Node(Vector2Int pos, object data, DirectionMask directions, int id)
+        public Node(Vector2Int pos, T data, DirectionMask directions, int id)
         {
             Pos = pos;
             Data = data;

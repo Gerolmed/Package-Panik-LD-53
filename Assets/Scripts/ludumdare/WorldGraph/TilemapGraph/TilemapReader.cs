@@ -24,7 +24,7 @@ namespace LudumDare.WorldGraph.TilemapGraph
                 {
                     var tileBase = tilemap.GetTile(new Vector3Int(x, y, 0));
                     if(tileBase is not NodeTile nodeTile || nodeTile.DirectionMask  == DirectionMask.None) continue;
-                    graph.AddNodeAt(new Vector2Int(x, y), new NodeData(),
+                    graph.AddNodeAt(new Vector2Int(x, y), new NodeData {IsTarget = nodeTile.IsTarget},
                         nodeTile.DirectionMask);
                 }
             }

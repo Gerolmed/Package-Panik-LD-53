@@ -16,6 +16,10 @@ namespace LudumDare.Satisfaction
             socketRef.Instance = this;
         }
 
+        public void Deduct(int amount) {
+            current -= amount;
+        }
+
 
         public int Current => current;
 

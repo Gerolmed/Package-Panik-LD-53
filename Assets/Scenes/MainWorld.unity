@@ -20456,6 +20456,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8702304407654776341, guid: 8e45ee3cce7fa14418837edca920020a, type: 3}
+      propertyPath: hoursPerCycle
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8702304407654776341, guid: 8e45ee3cce7fa14418837edca920020a, type: 3}
+      propertyPath: secondsPerHour
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8702304407654776341, guid: 8e45ee3cce7fa14418837edca920020a, type: 3}
       propertyPath: onCycle.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}

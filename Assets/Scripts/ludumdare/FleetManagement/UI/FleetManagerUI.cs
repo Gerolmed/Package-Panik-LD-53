@@ -7,10 +7,8 @@ namespace LudumDare.FleetManagement.UI
     public class FleetManagerUI : MonoBehaviour {
         private Dictionary<DeliveryUnit, DeliveryUnitUIRenderer> _unitRenderers = new();
 
-        [SerializeField] private GameObject panel;
+        [SerializeField] private GameObject parent;
         
-        private float _lastY = 0f;
-        [SerializeField] private float margin = 5f;
 
         [SerializeField] private GameObject rendererTemplate;
         [SerializeField] private FleetManagerSocket fleetManagerSocket;
@@ -28,10 +26,8 @@ namespace LudumDare.FleetManagement.UI
 
         public void AddRenderer(DeliveryUnit unitType)
         {
-            var newPanel = Instantiate(rendererTemplate, new Vector3(0, _lastY), Quaternion.identity);
-            newPanel.transform.SetParent(panel.transform, false);
-
-            _lastY -= newPanel.GetComponent<RectTransform>().rect.height + margin;
+            var newPanel = Instantiate(rendererTemplate);
+            newPanel.transform.SetParent(parent.transform, false);
 
             var newRenderer = newPanel.GetComponent<DeliveryUnitUIRenderer>();
 

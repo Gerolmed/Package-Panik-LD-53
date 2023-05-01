@@ -13,9 +13,13 @@ namespace LudumDare.WorldGraph.TilemapGraph
         [SerializeField]
         private bool isTarget;
 
+        [SerializeField]
+        private bool isWarehouseLocation;
+
         public DirectionMask DirectionMask => directionMask;
         
         public bool IsTarget => isTarget;
+        public bool IsWarehouseLocation => isWarehouseLocation;
         
 #if UNITY_EDITOR
      

@@ -44,10 +44,10 @@ namespace LudumDare.Delivery
                 var cyclesPerDay = controlManagerSocket.Instance.CyclesPerDay;
                 var age = cycle - (int) (cyclesPerDay * district.UnlockedSince / 60 / 24);
  
-                var targets = DistributeOnto(possibleTargets, (int) _packetDistributionFunction.GetRandomValue(age));
+                var targets = DistributeOnto(possibleTargets, (int) _packetDistributionFunction.GetRandomValue(age) / 2);
                 
                 resolver.ExecuteDelivery(targets.Select(target => new DeliveryCommand(target, DeliveryType.Mail)));
-
+                resolver.ExecuteDelivery(targets.Select(target => new DeliveryCommand(target, DeliveryType.Package)));
             }
         }
 

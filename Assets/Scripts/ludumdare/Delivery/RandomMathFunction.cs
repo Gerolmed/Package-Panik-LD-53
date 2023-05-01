@@ -7,7 +7,7 @@ namespace LudumDare.Delivery
     {
 
 
-        private static readonly float BASE_SCALING = 0.003f;
+        private static readonly float BASE_SCALING = 0.0006f;
         private static readonly float NOISE_FREQUENCY = 0.04f;
         private static readonly float NOISE_AMPLITUDE = 5;
 

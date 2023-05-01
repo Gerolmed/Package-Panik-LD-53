@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
+using LudumDare.MoneySystem;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -20,8 +22,24 @@ namespace LudumDare.Districts.Render
 
         [SerializeField]
         private DistrictManagerSocket socket;
+
+
+        [SerializeField]
+        private GameObject purchaseButton;
+
+        [SerializeField]
+        private MoneyManagerSocket moneyManagerSocket;
+
+        private int _price;
+        private void Update()
+        {
+            purchaseButton.SetActive(moneyManagerSocket.Instance.Balance >= _price);
+        }
+
+
         public void UpdateDistrict(District district)
         {
+            _price = district.Price;
             if (Application.isPlaying && !(socket.Instance?.IsLocked(district) ?? true))
             {
                 renderRoot.SetActive(false);
@@ -45,6 +63,7 @@ namespace LudumDare.Districts.Render
         
         private string Formatted(int balance)
         {
+            if (balance == 0) return "FREE";
             return $"{balance:n0}";
         }
     }

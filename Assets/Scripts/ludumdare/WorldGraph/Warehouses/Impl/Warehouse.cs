@@ -1,7 +1,6 @@
 ﻿using LudumDare.WorldGraph.TilemapGraph;
 using UnityEngine;
 using UnityEngine.Tilemaps;
-using UnityEngine.EventSystems;
 
 namespace LudumDare.WorldGraph.Warehouses.Impl
 {
@@ -12,7 +11,12 @@ namespace LudumDare.WorldGraph.Warehouses.Impl
         private Vector2 _currentPos;
 
         private GameObject _ghostWarehouseInstance = null;
+        private SpriteRenderer _ghostInstanceRenderer = null;
         private bool _ghostTileValid;
+
+        private bool _isMouseDown = true;
+        private float _mouseDownTime = 0f;
+        [SerializeField] private float clickTime = 0.2f;
         private void Start() {
             _warehouseManager = GetComponentInParent<WarehouseManager>();
 
@@ -29,6 +33,7 @@ namespace LudumDare.WorldGraph.Warehouses.Impl
         {
             _ghostFollowMouse = true;
             _ghostWarehouseInstance = Instantiate(_warehouseManager.GhostWarehouse);
+            _ghostInstanceRenderer = _ghostWarehouseInstance.GetComponentInChildren<SpriteRenderer>();
         }
 
         private void PutWarehouse()
@@ -41,6 +46,7 @@ namespace LudumDare.WorldGraph.Warehouses.Impl
             _ghostFollowMouse = false;
             Destroy(_ghostWarehouseInstance);
             _ghostWarehouseInstance = null;
+            _ghostInstanceRenderer = null;
 
             _ghostTileValid = false;
         }
@@ -50,6 +56,7 @@ namespace LudumDare.WorldGraph.Warehouses.Impl
             _ghostFollowMouse = false;
             Destroy(_ghostWarehouseInstance);
             _ghostWarehouseInstance = null;
+            _ghostInstanceRenderer = null;
 
             _ghostTileValid = false;
         }
@@ -59,10 +66,27 @@ namespace LudumDare.WorldGraph.Warehouses.Impl
             {
                 GhostFollowMouse();
 
-                if (Input.GetMouseButtonDown(0))
-                    PutWarehouse();
+                if (!_ghostTileValid)
+                    _ghostInstanceRenderer.color = _warehouseManager.InvalidGhostColor;
+                else
+                    _ghostInstanceRenderer.color = _warehouseManager.ValidGhostColor;
 
-                if (Input.GetMouseButtonDown(1))
+                if (Input.GetMouseButtonDown(0))
+                {
+                    _isMouseDown = true;
+                    _mouseDownTime = Time.time;
+                }
+                if (Input.GetMouseButtonUp(0) && _isMouseDown)
+                {
+                    float timeElapsed = Time.time - _mouseDownTime;
+                    if (timeElapsed < clickTime)
+                    {
+                        PutWarehouse();
+                    }
+                    _isMouseDown = false;
+                }
+
+                if (!_isMouseDown && Input.GetMouseButtonDown(1))
                     CancelMoving();
             }
         }

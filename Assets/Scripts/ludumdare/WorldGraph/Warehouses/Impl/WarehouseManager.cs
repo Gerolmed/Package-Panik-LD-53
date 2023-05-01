@@ -21,6 +21,14 @@ namespace LudumDare.WorldGraph.Warehouses.Impl
         private GameObject ghostWarehouse;
         public GameObject GhostWarehouse => ghostWarehouse;
 
+        [SerializeField]
+        private Color validGhostColor;
+        public Color ValidGhostColor => validGhostColor;
+
+        [SerializeField]
+        private Color invalidGhostColor;
+        public Color InvalidGhostColor => invalidGhostColor;
+
         private void Awake()
         {
             socketRef.Instance = this;

@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fleetManagerSocket: {fileID: 11400000, guid: af8ed1ebeb2108f468b384e0957fd876, type: 2}
   moneyManagerSocket: {fileID: 11400000, guid: dad353d06ef73a242bff9cbbc1922105, type: 2}
+  deliveryUnitStorageSocket: {fileID: 11400000, guid: 6452f0dfcb53e114ebed0b239f497f84, type: 2}
   unlockUnitEvent:
     m_PersistentCalls:
       m_Calls:

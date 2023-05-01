@@ -36,5 +36,11 @@ namespace LudumDare.Units
         {
             _unitInstances.Add(new UnitInstanceImpl(unit));
         }
+
+
+        public void RemoveUnit(DeliveryUnit unit)
+        {
+            _unitInstances.Remove(_unitInstances.Last(unitInstance => unitInstance.Type == unit));
+        }
     }
 }

@@ -43,8 +43,6 @@ namespace LudumDare.Delivery
 
                 var cyclesPerDay = controlManagerSocket.Instance.CyclesPerDay;
                 var age = cycle - (int) (cyclesPerDay * district.UnlockedSince / 60 / 24);
-                Debug.Log(age);
-                Debug.Log("F: " + _packetDistributionFunction.GetRandomValue(age));
 
                 var targets = DistributeOnto(possibleTargets, (int) _packetDistributionFunction.GetRandomValue(age));
                 

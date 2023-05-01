@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using LudumDare.TimeControl;
 using UnityEngine;
 using UnityEngine.Events;
@@ -37,6 +38,12 @@ namespace LudumDare.Units.Navigation
         private IEnumerator StartInnerTraversal(IReadOnlyList<PathNode> path)
         {
             SetPos(path[0].Pos);
+            
+            if(unit.DeliveryType == DeliveryType.DronePackage)
+            {
+                path = path.Where(node => node.Type != PathType.Road).ToList();
+            }
+            
             for (var i = 1; i < path.Count; i++)
             {
                 yield return TravelTowards(path[i - 1], path[i]);

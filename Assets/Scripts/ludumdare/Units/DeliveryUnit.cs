@@ -63,7 +63,8 @@ namespace LudumDare.Units
     public enum DeliveryType
     {
             Mail,
-            Package
+            Package,
+            DronePackage
     }
     public enum UnitType
     {

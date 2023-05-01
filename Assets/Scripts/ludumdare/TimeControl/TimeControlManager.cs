@@ -64,6 +64,7 @@ namespace LudumDare.TimeControl
             (_time - (DayOfWeek * 60 * 24 + Week * 7 * 60 * 24)) / 60f);
         public int DayOfWeek => Mathf.FloorToInt((_time - Week * 7 * 60 * 24) / (60 * 24));
         public int Week => Mathf.FloorToInt(_time / (7 * 60 * 24));
+        public float IngameTime => _time;
     }
     
     [Serializable]

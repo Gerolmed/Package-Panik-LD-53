@@ -17,6 +17,7 @@ namespace LudumDare.Districts
         public Vector2Int LowerBound { get; }
         public Vector2Int UpperBound { get; }
         public int Price { get; }
+        public float UnlockedSince { set; get; }
         
         public bool Contains(Vector2Int node)
         {

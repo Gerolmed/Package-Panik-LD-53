@@ -12,6 +12,7 @@ namespace LudumDare.TimeControl
         public int HourOfDay { get; }
         public int DayOfWeek { get; }
         public int Week { get; }
+        public float IngameTime { get; }
     }
 
     public enum TimeMode

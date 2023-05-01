@@ -94,6 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6664035313996558195}
   - component: {fileID: 7826665097380993759}
+  - component: {fileID: -526773735918072370}
   m_Layer: 0
   m_Name: NavUnit
   m_TagString: Untagged
@@ -132,7 +133,36 @@ MonoBehaviour:
   speed: 2
   onEnter:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -526773735918072370}
+        m_TargetAssemblyTypeName: LudumDare.Units.Navigation.MoneyPathReward, Assembly-CSharp
+        m_MethodName: OnNode
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   spriteRenderer: {fileID: 1281738902617167199}
   unit: {fileID: 11400000, guid: df4ee421cba58a641a790689b807acf0, type: 2}
   timeSocket: {fileID: 11400000, guid: 0ebcd7f7d524e3f42aa7c0cb0379cc76, type: 2}
+--- !u!114 &-526773735918072370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8461731106529833742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a0a7c10b3764221863845b5718afe49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moneyManagerSocket: {fileID: 0}
+  mailMoney: 10
+  packageMoney: 20
+  droneMoney: 50
+  navigator: {fileID: 7826665097380993759}

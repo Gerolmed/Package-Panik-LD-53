@@ -19,6 +19,9 @@ namespace LudumDare.Delivery.Render
         [SerializeField]
         private DeliveryUnitStorageSocket storageSocket;
 
+        [SerializeField]
+        private bool showOnlyTotal = false;
+
         private void Update()
         {
             var total = new Dictionary<UnitType, int>();
@@ -39,9 +42,18 @@ namespace LudumDare.Delivery.Render
                 free[unitInstance.Type.UnitType] += 1;
             }
 
-            mailText.text = $"{free[UnitType.MailTruck]:D2}/{total[UnitType.MailTruck]:D2}";
-            packageText.text = $"{free[UnitType.PackageTruck]:D2}/{total[UnitType.PackageTruck]:D2}";
-            droneText.text = $"{free[UnitType.Drone]:D2}/{total[UnitType.Drone]:D2}";
+            if (!showOnlyTotal)
+            {
+                mailText.text = $"{free[UnitType.MailTruck]:D2}/{total[UnitType.MailTruck]:D2}";
+                packageText.text = $"{free[UnitType.PackageTruck]:D2}/{total[UnitType.PackageTruck]:D2}";
+                droneText.text = $"{free[UnitType.Drone]:D2}/{total[UnitType.Drone]:D2}";
+            }
+            else
+            {
+                mailText.text = $"{total[UnitType.MailTruck]:D2}";
+                packageText.text = $"{total[UnitType.PackageTruck]:D2}";
+                droneText.text = $"{total[UnitType.Drone]:D2}";
+            }
         }
     }
 }

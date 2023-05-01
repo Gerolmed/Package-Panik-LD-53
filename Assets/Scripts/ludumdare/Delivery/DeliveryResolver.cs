@@ -82,6 +82,8 @@ namespace LudumDare.Delivery
 
                 proceessedCommands.AddRange(cluster);
                 cluster.Clear();
+
+                if(connections == null) break;
             }
 
             var packageCommands = _commands.FindAll(cmd => cmd.DeliveryType == DeliveryType.Package).Take(100).ToList();
@@ -96,6 +98,8 @@ namespace LudumDare.Delivery
 
                 proceessedCommands.AddRange(cluster);
                 cluster.Clear();
+                
+                if(connections == null) break;
             }
 
             _commands.RemoveAll((cmd) => proceessedCommands.Contains(cmd));
@@ -157,7 +161,7 @@ namespace LudumDare.Delivery
             unit.Occupied = false;
             Destroy(renderInstance.gameObject);
 
-            DispatchAllUnits();
+            // DispatchAllUnits();
         }
 
         public void AssignGraph(Graph<NodeData> graph)

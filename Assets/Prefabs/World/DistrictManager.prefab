@@ -49,3 +49,4 @@ MonoBehaviour:
   onUnlock:
     m_PersistentCalls:
       m_Calls: []
+  moneyManagerSocket: {fileID: 11400000, guid: dad353d06ef73a242bff9cbbc1922105, type: 2}

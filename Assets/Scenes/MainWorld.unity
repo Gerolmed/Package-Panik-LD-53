@@ -19048,10 +19048,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: UnitStorage
       objectReference: {fileID: 0}
-    - target: {fileID: 2044211894405367340, guid: a843d76e4be3d8c4c9f15431c9926684, type: 3}
-      propertyPath: count
-      value: 20
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19273,7 +19269,7 @@ MonoBehaviour:
   mapButton: {fileID: 5731542801332505351}
   analyticsUI: {fileID: 8775790102217605291}
   fleetManagerUI: {fileID: 1324954226}
-  barAnimator: {fileID: 5899415345958132268}
+  barAnimator: {fileID: 0}
 --- !u!1001 &465474665418562784
 PrefabInstance:
   m_ObjectHideFlags: 0

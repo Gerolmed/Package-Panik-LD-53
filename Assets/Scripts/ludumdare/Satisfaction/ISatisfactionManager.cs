@@ -5,5 +5,7 @@
         public int Current { get; }
         public int Total { get; }
         public float Percentage { get; }
+
+        public void Deduct(int amount);
     }
 }

@@ -48,9 +48,9 @@ namespace LudumDare.Delivery
                 var droneTargets = DistributeOnto(possibleTargets, (int) (_packetDistributionFunction.GetRandomValue(age) / 10 - 4));
                 
                 var commands = new List<DeliveryCommand>();
-                commands.AddRange(targets.Select(target => new DeliveryCommand(target, DeliveryType.Mail)));
-                commands.AddRange(targets.Select(target => new DeliveryCommand(target, DeliveryType.Package)));
-                commands.AddRange(droneTargets.Select(target => new DeliveryCommand(target, DeliveryType.DronePackage)));
+                commands.AddRange(targets.Select(target => new DeliveryCommand(target, DeliveryType.Mail, cycle)));
+                commands.AddRange(targets.Select(target => new DeliveryCommand(target, DeliveryType.Package, cycle)));
+                commands.AddRange(droneTargets.Select(target => new DeliveryCommand(target, DeliveryType.DronePackage, cycle)));
 
                 resolver.ExecuteDelivery(commands);
             }

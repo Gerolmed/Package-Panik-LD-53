@@ -18777,7 +18777,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2074221468
 GameObject:
@@ -20720,6 +20720,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2214810033609314896, guid: 22d145a5adf7fa3438f5fb420bc84e98, type: 3}
+      propertyPath: timeCtl
+      value: 
+      objectReference: {fileID: 11400000, guid: 0ebcd7f7d524e3f42aa7c0cb0379cc76, type: 2}
+    - target: {fileID: 2214810033609314896, guid: 22d145a5adf7fa3438f5fb420bc84e98, type: 3}
+      propertyPath: satisfaction
+      value: 
+      objectReference: {fileID: 11400000, guid: b349be46520a4fe4f90011b6d525a547, type: 2}
     - target: {fileID: 2366566891640561682, guid: 22d145a5adf7fa3438f5fb420bc84e98, type: 3}
       propertyPath: m_Name
       value: Delivery Resolver
@@ -20730,7 +20738,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 903803c09a1661f469ae28c48d9ffbc0, type: 2}
     - target: {fileID: 7058368217920530285, guid: 22d145a5adf7fa3438f5fb420bc84e98, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7058368217920530285, guid: 22d145a5adf7fa3438f5fb420bc84e98, type: 3}
       propertyPath: m_LocalPosition.x
@@ -20815,6 +20823,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 436468267237361795, guid: 4cf5438aba9fef64a8863dbafe61c234, type: 3}
+      propertyPath: current
+      value: 90
+      objectReference: {fileID: 0}
     - target: {fileID: 3054494276828077386, guid: 4cf5438aba9fef64a8863dbafe61c234, type: 3}
       propertyPath: m_Name
       value: SatisfactionManager

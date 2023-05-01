@@ -8,6 +8,8 @@ using LudumDare.Units;
 using LudumDare.Units.Navigation;
 using LudumDare.WorldGraph;
 using LudumDare.WorldGraph.Warehouses;
+using LudumDare.Satisfaction;
+using LudumDare.TimeControl;
 
 
 namespace LudumDare.Delivery
@@ -22,6 +24,12 @@ namespace LudumDare.Delivery
 
         [SerializeField]
         private WarehouseManagerSocket warehouseManager;
+
+        [SerializeField]
+        private SatisfactionManagerSocket satisfaction;
+
+        [SerializeField]
+        private TimeControlManagerSocket timeCtl;
 
         [SerializeField]
         private UnitNavigator unitNavigator;
@@ -120,6 +128,13 @@ namespace LudumDare.Delivery
 
             _commands.RemoveAll((cmd) => proceessedCommands.Contains(cmd));
 
+            var cycle = timeCtl.Instance.Cycle;
+            var expiredCommands = _commands.Where(cmd => (cycle - cmd.Cycle > timeCtl.Instance.CyclesPerDay)).ToList();
+            foreach (var exCmd in expiredCommands) {
+                satisfaction.Instance.Deduct(5);
+                _commands.Remove(exCmd);
+            }
+
             Debug.Log("Packets in queue: " + _commands.Count);
         }
 
@@ -188,6 +203,7 @@ namespace LudumDare.Delivery
         private IEnumerator DispatchUnitInternal(IReadOnlyList<PathNode> path, IUnitInstance unit)
         {
             var renderInstance = Instantiate(unitNavigator);
+            renderInstance.Unit = unit.Type;
             yield return renderInstance.StartTraversal(path);
             unit.Occupied = false;
             Destroy(renderInstance.gameObject);

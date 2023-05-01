@@ -25,11 +25,23 @@ namespace LudumDare.Districts.Render
         private void Awake()
         {
             _district = new District(ID, GetLowerBounds(), GetUpperBounds(), price);
-            GetComponentInParent<DistrictManager>().Add(_district);
+            GetComponentInParent<DistrictManager>()?.Add(_district);
             UpdateUI();
 
         }
-        
+
+
+        private void Start()
+        {
+            UpdateUI();
+        }
+
+
+        public void PurchaseDistrict()
+        {
+            GetComponentInParent<DistrictManager>()?.Unlock(_district);
+            UpdateUI();
+        }
 
 
         private void UpdateUI()

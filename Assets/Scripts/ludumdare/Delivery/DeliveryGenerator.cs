@@ -33,7 +33,7 @@ namespace LudumDare.Delivery
                 .ToHashSet();
         }
         
-        public void DoGenerate(int cycle)
+        public void DoGenerate(long cycle)
         {
             
             foreach (var district in districtManagerSocket.Instance.GetUnlocked())
@@ -44,6 +44,7 @@ namespace LudumDare.Delivery
                 var age = cycle - (int) district.UnlockedSince;
 
                 var targets = DistributeOnto(possibleTargets, (int) _packetDistributionFunction.GetRandomValue(age));
+                
                 resolver.ExecuteDelivery(targets.Select(target => new DeliveryCommand(target, DeliveryType.Mail)));
 
             }

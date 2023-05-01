@@ -13,6 +13,7 @@ namespace LudumDare.TimeControl
         public int DayOfWeek { get; }
         public int Week { get; }
         public float IngameTime { get; }
+        public long Cycle { get; }
     }
 
     public enum TimeMode

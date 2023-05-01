@@ -27,7 +27,7 @@ namespace LudumDare.UI.Stats
 
         private RandomMathFunction _mathFunction = new();
 
-        protected override void OnEnable()
+        protected void Update()
         {
             CalculateStats();
         }

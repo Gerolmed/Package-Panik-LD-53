@@ -7,9 +7,9 @@ namespace LudumDare.Delivery
     {
 
 
-        private static readonly float BASE_SCALING = 0.01f;
-        private static readonly float NOISE_FREQUENCY = 0.2f;
-        private static readonly float NOISE_AMPLITUDE = 4;
+        private static readonly float BASE_SCALING = 0.003f;
+        private static readonly float NOISE_FREQUENCY = 0.04f;
+        private static readonly float NOISE_AMPLITUDE = 5;
 
         public RandomMathFunction()
         {
@@ -18,7 +18,7 @@ namespace LudumDare.Delivery
 
         public float GetRandomValue(float x)
         {
-            return BASE_SCALING * x * x + NOISE_AMPLITUDE * Mathf.PerlinNoise1D(x / NOISE_FREQUENCY);
+            return BASE_SCALING * x * x + NOISE_AMPLITUDE * Mathf.PerlinNoise1D(x * NOISE_FREQUENCY);
         }
 
         public float GetAvgForDay(float x)

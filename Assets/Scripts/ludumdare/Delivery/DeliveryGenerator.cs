@@ -23,6 +23,8 @@ namespace LudumDare.Delivery
         private HashSet<Vector2Int> _targets = new();
         private Dictionary<string, List<Vector2Int>> _targetCache = new();
 
+        private RandomMathFunction _packetDistributionFunction = new RandomMathFunction();
+
         public void OnGraph(Graph<NodeData> graph)
         {
             _targets = graph.NodeGraph
@@ -38,8 +40,11 @@ namespace LudumDare.Delivery
             {
                 var possibleTargets = _targetCache.GetOrCreate(district.ID,
                     () => CollectAllFor(district));
+
+                var age = cycle - (int) district.UnlockedSince;
+
+                var targets = DistributeOnto(possibleTargets, (int) _packetDistributionFunction.GetRandomValue(age));
                 
-                var targets = DistributeOnto(possibleTargets, 5);
                 resolver.ExecuteDelivery(targets.Select(target => new DeliveryCommand(target, DeliveryType.Mail)));
 
             }

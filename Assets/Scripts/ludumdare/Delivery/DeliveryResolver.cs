@@ -103,6 +103,8 @@ namespace LudumDare.Delivery
             }
 
             _commands.RemoveAll((cmd) => proceessedCommands.Contains(cmd));
+
+            Debug.Log("Packets in queue: " + _commands.Count);
         }
 
 
@@ -118,10 +120,9 @@ namespace LudumDare.Delivery
             return (cmd1.Pos.x - cmd2.Pos.x) * (cmd1.Pos.x - cmd2.Pos.x) + (cmd1.Pos.y - cmd2.Pos.y) * (cmd1.Pos.y - cmd2.Pos.y);
         }
 
-        private IReadOnlyList<PathNode> BuildPath(List<Vector2Int> commands, NavUser user)
+        private IReadOnlyList<PathNode> BuildPath(List<Vector2Int> commands, IWarehouse warehouse, NavUser user)
         {
             var path = new List<PathNode>();
-            var warehouse = warehouseManager.Instance.GetAll().First();
             path.Add(new PathNode() { Pos = warehouse.GetPosition() });
 
             foreach (var cmd in commands)
@@ -150,7 +151,21 @@ namespace LudumDare.Delivery
         private void DispatchUnit(List<Vector2Int> positions, IUnitInstance unit)
         {
             unit.Occupied = true;
-            var path = BuildPath(positions, unit.Type.NavUser);
+
+            IWarehouse nearest = null;
+            var distance = 0;
+            foreach (var current in warehouseManager.Instance.GetAll()) {
+                var currentDistance = 
+                    (current.GetPosition().x - positions[0].x) * (current.GetPosition().x - positions[0].x) + 
+                    (current.GetPosition().y - positions[0].y) + (current.GetPosition().y - positions[0].y);
+                
+                if (nearest == null || currentDistance < distance) {
+                    nearest = current;
+                    distance = currentDistance;
+                }
+            }
+
+            var path = BuildPath(positions, nearest, unit.Type.NavUser);
             StartCoroutine(DispatchUnitInternal(path, unit));
         }
 

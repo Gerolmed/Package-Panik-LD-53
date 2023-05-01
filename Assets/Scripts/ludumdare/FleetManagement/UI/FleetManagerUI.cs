@@ -46,9 +46,14 @@ namespace LudumDare.FleetManagement.UI
         public void ToggleFleetManager()
         {
             if (!_isActive)
+            {
+                HideFleetManager();
                 gameObject.SetActive(true);
+            }
             else
+            {
                 PlayHideAnimation();
+            }
 
             _isActive = !_isActive;
         }

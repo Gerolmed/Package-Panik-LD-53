@@ -7,7 +7,8 @@ namespace LudumDare.UI
 {    
     public class BottomPanel : MonoBehaviour {
         [SerializeField] private Button hubButton;       
-        [SerializeField] private Button mapButton;     
+        [SerializeField] private Button mapButton;
+
         [SerializeField] private AnalyticsUI analyticsUI;
         [SerializeField] private FleetManagerUI fleetManagerUI;
         public void ChangeMiddleButton()

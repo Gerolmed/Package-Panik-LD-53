@@ -24,9 +24,14 @@ namespace LudumDare.Analytics.UI
         public void ToggleAnalytics()
         {
             if (!_isActive)
+            {
+                HideAnalytics();
                 gameObject.SetActive(true);
+            }
             else
+            {
                 PlayHideAnimation();
+            }
 
             _isActive = !_isActive;
         }

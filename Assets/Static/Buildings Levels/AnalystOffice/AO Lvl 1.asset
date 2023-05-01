@@ -19,3 +19,4 @@ MonoBehaviour:
   animatorController: {fileID: 0}
   hollowAnimatorController: {fileID: 0}
   unitUnlocked: {fileID: 0}
+  unlockAnalytics: 1

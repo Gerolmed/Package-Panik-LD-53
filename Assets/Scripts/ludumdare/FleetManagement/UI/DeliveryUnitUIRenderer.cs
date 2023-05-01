@@ -30,7 +30,7 @@ namespace LudumDare.FleetManagement.UI
             weightIcon.SetNativeSize();
 
             weightTMP.text = unitType.TotalWeight.ToString();
-            maintenanceCostTMP.text = unitType.MaintenanceCost.ToString() + " / DAY";
+            maintenanceCostTMP.text = "-" + unitType.MaintenanceCost.ToString() + "/DAY";
             purchaseCostTMP.text = unitType.PurchaseCost.ToString();
         }
 

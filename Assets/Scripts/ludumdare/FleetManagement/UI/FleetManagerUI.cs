@@ -6,17 +6,32 @@ namespace LudumDare.FleetManagement.UI
 {
     public class FleetManagerUI : MonoBehaviour {
         private Dictionary<DeliveryUnit, DeliveryUnitUIRenderer> _unitRenderers = new();
+
+        [SerializeField] private GameObject panel;
+        
         private float _lastY = 0f;
+        [SerializeField] private float margin = 5f;
 
         [SerializeField] private GameObject rendererTemplate;
         [SerializeField] private FleetManagerSocket fleetManagerSocket;
 
+
+        [SerializeField] private Animator animator;
+        private Vector2 _origPos;
+        
+        private bool _isActive = false;
+        public bool IsActive => _isActive;
+
+        private void Awake() {
+            _origPos = transform.position;    
+        }
+
         public void AddRenderer(DeliveryUnit unitType)
         {
             var newPanel = Instantiate(rendererTemplate, new Vector3(0, _lastY), Quaternion.identity);
-            newPanel.transform.SetParent(transform, false);
+            newPanel.transform.SetParent(panel.transform, false);
 
-            _lastY -= newPanel.GetComponent<RectTransform>().rect.height;
+            _lastY -= newPanel.GetComponent<RectTransform>().rect.height + margin;
 
             var newRenderer = newPanel.GetComponent<DeliveryUnitUIRenderer>();
 
@@ -30,6 +45,27 @@ namespace LudumDare.FleetManagement.UI
         public void RenderAmount(DeliveryUnit unitType, uint amount)
         {
             _unitRenderers[unitType].RenderAmount(amount);
+        }
+
+        public void ToggleFleetManager()
+        {
+            if (!_isActive)
+                gameObject.SetActive(true);
+            else
+                PlayHideAnimation();
+
+            _isActive = !_isActive;
+        }
+
+        public void PlayHideAnimation()
+        {
+            animator.SetTrigger("Hide");
+        }
+
+        public void HideFleetManager()
+        {
+            transform.position = _origPos;
+            gameObject.SetActive(false);
         }
     }
 }

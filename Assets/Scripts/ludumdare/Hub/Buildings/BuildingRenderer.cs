@@ -44,12 +44,15 @@ namespace LudumDare.Hub.Buildings
             if (upgrade.nextLevel == null)
                 _maxLevel = true;
 
+
             _currentSprite = upgrade.buildingLevel.Sprite;
             image.sprite = _currentSprite;
             image.SetNativeSize();
 
+
             if (upgrade.buildingLevel.HollowSprite != null)
                 _hollowSprite = upgrade.buildingLevel.HollowSprite;
+
 
             if (upgrade.buildingLevel.Weight != -1)
             {
@@ -62,9 +65,11 @@ namespace LudumDare.Hub.Buildings
                 }
             }
 
+
             if (!_maxLevel)
                 upgradeCostTMP.text = upgrade.nextLevel.Price.ToString();
             
+
             if (animator) 
             {
                 _currentAnimController = upgrade.buildingLevel.AnimatorController;
@@ -73,6 +78,10 @@ namespace LudumDare.Hub.Buildings
 
                 animator.runtimeAnimatorController = _currentAnimController;
             }
+
+
+            // if (upgrade.buildingLevel.UnlockAnalytics)
+            //     unlockAnalytics.Invoke();
         }
 
         public void ShowInfo()

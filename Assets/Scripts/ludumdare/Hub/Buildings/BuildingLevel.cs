@@ -13,6 +13,7 @@ namespace LudumDare.Hub.Buildings
         [SerializeField] private RuntimeAnimatorController animatorController = null;
         [SerializeField] private RuntimeAnimatorController hollowAnimatorController = null;
         [SerializeField] private DeliveryUnit unitUnlocked;
+        [SerializeField] private bool unlockAnalytics;
         public Sprite Sprite => sprite;
         public Sprite HollowSprite => hollowSprite;
         public int Price => price;
@@ -20,5 +21,6 @@ namespace LudumDare.Hub.Buildings
         public RuntimeAnimatorController AnimatorController => animatorController;
         public RuntimeAnimatorController HollowAnimatorController => hollowAnimatorController;
         public DeliveryUnit UnitUnlocked => unitUnlocked;
+        public bool UnlockAnalytics => unlockAnalytics;
     }
 }

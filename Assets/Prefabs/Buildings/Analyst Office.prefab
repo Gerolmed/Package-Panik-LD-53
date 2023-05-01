@@ -710,7 +710,7 @@ MonoBehaviour:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: LudumDare.Hub.Buildings.BuildingUpgradeInfoRenderer,
           Assembly-CSharp
-        m_MethodName: UnlockUnitByUpgrade
+        m_MethodName: UnlockAnalyticsByUpgrade
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -20213,6 +20213,10 @@ PrefabInstance:
       propertyPath: socketRef
       value: 
       objectReference: {fileID: 11400000, guid: 3d6ab83ac6b16044c9eaaaa021ba458f, type: 2}
+    - target: {fileID: 5538669659823784485, guid: fc97fbbb1baf22d4ab16b540736ab930, type: 3}
+      propertyPath: m_Delegates.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6869149583356339269, guid: fc97fbbb1baf22d4ab16b540736ab930, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.5
@@ -20228,6 +20232,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 3366465344816786052, guid: fc97fbbb1baf22d4ab16b540736ab930, type: 3}
     - {fileID: 3691809384010056026, guid: fc97fbbb1baf22d4ab16b540736ab930, type: 3}
+    - {fileID: 5538669659823784485, guid: fc97fbbb1baf22d4ab16b540736ab930, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

@@ -1,5 +1,6 @@
 ﻿using Cinemachine;
 using UnityEngine;
+using System.Linq;
 
 namespace LudumDare.Utils.Camera
 {
@@ -13,6 +14,9 @@ namespace LudumDare.Utils.Camera
 
         private Vector3 _lastMousePos;
 
+        [SerializeField]
+        private GameObject[] blockMovementWindows;
+
         private const float Speed = 7;
 #if UNITY_EDITOR
         private const float MouseSpeed = 100;
@@ -22,6 +26,9 @@ namespace LudumDare.Utils.Camera
         
         private void Update()
         {
+            if (blockMovementWindows.Any(window => window.activeSelf))
+                return;
+
             MouseScroll();
             if(!MouseMovement())
             {

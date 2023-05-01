@@ -16,7 +16,7 @@ namespace LudumDare.Hub.UI
         
         public void ShowHub()
         {
-            if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Hub_Idle"))
+            if (animator.isActiveAndEnabled && !animator.GetCurrentAnimatorStateInfo(0).IsName("Hub_Idle"))
                 HideHub();
             
             gameObject.SetActive(true);

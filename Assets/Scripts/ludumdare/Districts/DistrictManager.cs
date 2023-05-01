@@ -50,7 +50,7 @@ namespace LudumDare.Districts
 
         public bool IsLocked(District district)
         {
-            return _unlocked.Contains(district.ID);
+            return !_unlocked.Contains(district.ID);
         }
 
 

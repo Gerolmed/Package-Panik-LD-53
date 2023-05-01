@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7459974056996932316}
   - component: {fileID: 1767940297090896161}
   - component: {fileID: 6766427402038506469}
-  - component: {fileID: 8402571726425106583}
+  - component: {fileID: 8472620387184693948}
   m_Layer: 0
   m_Name: Warehouse
   m_TagString: Untagged
@@ -144,7 +144,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8402571726425106583
+--- !u!114 &8472620387184693948
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

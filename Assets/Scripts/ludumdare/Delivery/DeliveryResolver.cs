@@ -45,7 +45,7 @@ namespace LudumDare.Delivery {
                 if (unit.Occupied)
                     continue;
 
-                var commands = _commands.FindAll(cmd => cmd.DeliveryType == unit.Type.DeliveryType);
+                var commands = _commands.FindAll(cmd => cmd.DeliveryType == unit.Type.DeliveryType).Take(100).ToList();
                 var cluster = CluserUtil.FindFirstCluster<DeliveryCommand>(commands, Distance, (cluster) => cluster.Count, 2);
                 if(cluster == null || cluster.Count == 0) continue;
                 foreach (var cmd in cluster) {

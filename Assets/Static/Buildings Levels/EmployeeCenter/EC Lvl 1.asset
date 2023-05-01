@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 308accc5ab7b7ee469e62dd90db00f7d, type: 3}
   hollowSprite: {fileID: 21300000, guid: 5b88f4821d3b739429ca29b98486b194, type: 3}
-  price: 0
+  price: 500
   weight: 3
   animatorController: {fileID: 0}
+  hollowAnimatorController: {fileID: 0}
   unitUnlocked: {fileID: 11400000, guid: 60db14f6a83875349bb53ca6cbcf1b5e, type: 2}
+  unlockAnalytics: 0

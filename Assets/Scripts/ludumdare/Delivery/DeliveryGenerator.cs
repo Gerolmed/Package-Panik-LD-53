@@ -41,7 +41,10 @@ namespace LudumDare.Delivery
                 var possibleTargets = _targetCache.GetOrCreate(district.ID,
                     () => CollectAllFor(district));
 
-                var age = cycle - ((int) district.UnlockedSince / 60 / );
+                var cyclesPerDay = controlManagerSocket.Instance.CyclesPerDay;
+                var age = cycle - (int) (cyclesPerDay * district.UnlockedSince / 60 / 24);
+                Debug.Log(age);
+                Debug.Log("F: " + _packetDistributionFunction.GetRandomValue(age));
 
                 var targets = DistributeOnto(possibleTargets, (int) _packetDistributionFunction.GetRandomValue(age));
                 

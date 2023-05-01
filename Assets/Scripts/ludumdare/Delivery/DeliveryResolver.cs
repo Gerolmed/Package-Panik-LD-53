@@ -32,7 +32,7 @@ namespace LudumDare.Delivery
         private SpatialAStar<NavNode<NodeData>, NavUser> _map;
 
 
-        public void ExecuteDelivery(List<DeliveryCommand> batch)
+        public void ExecuteDelivery(IEnumerable<DeliveryCommand> batch)
         {
             _commands.AddRange(batch);
 

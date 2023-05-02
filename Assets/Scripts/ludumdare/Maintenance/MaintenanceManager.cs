@@ -35,7 +35,7 @@ namespace LudumDare.Maintenance
         {
             deliveryUnitStorageSocket.Instance.GetUnits()
                 .ToList()
-                .ForEach(unit => moneyManagerSocket.Instance.TryDeduct(unit.Type.MaintenanceCost, TransactionType.Maintenance));
+                .ForEach(unit => moneyManagerSocket.Instance.Deduct(unit.Type.MaintenanceCost, TransactionType.Maintenance));
         }
     }
 }

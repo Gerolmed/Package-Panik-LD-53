@@ -161,21 +161,27 @@ namespace LudumDare.Delivery
                 MoveToDestintion(cmd, path, user);
             }
 
-            MoveToDestintion(warehouse.GetPosition(), path, user);
+            MoveToDestintion(warehouse.GetPosition(), path, user, true);
             return path;
         }
 
-        private void MoveToDestintion(Vector2Int dest, List<PathNode> path, NavUser user)
+        private void MoveToDestintion(Vector2Int dest, List<PathNode> path, NavUser user, bool final = false)
         {
             var current = _graph.GetRelativePos(path.Last().Pos);
             var relDest = _graph.GetRelativePos(dest);
             var steps = _map.Search(current, relDest, user);
             if (steps == null) return;
 
+            var i = 0;
             foreach (var node in steps)
             {
+                i++;
                 if (node is Node<NodeData>)
-                    path.Add(new PathNode() { Pos = (node as Node<NodeData>).Pos });
+                {
+                    path.Add(new PathNode() {Pos = (node as Node<NodeData>).Pos, Type =
+                        (i == steps.Count && !final) ? PathType.Target : PathType.Road});
+                }
+
             }
         }
 

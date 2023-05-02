@@ -1,5 +1,6 @@
 ﻿using System;
 using LudumDare.MoneySystem;
+using LudumDare.Stats;
 using UnityEngine;
 
 namespace LudumDare.Units.Navigation
@@ -9,6 +10,8 @@ namespace LudumDare.Units.Navigation
 
         [SerializeField]
         private MoneyManagerSocket moneyManagerSocket;
+        [SerializeField]
+        private StatTrackManagerManagerSocket statTrack;
 
         [SerializeField]
         private int mailMoney = 20;
@@ -30,7 +33,21 @@ namespace LudumDare.Units.Navigation
                 UnitType.Drone => droneMoney,
                 _ => 0
             };
+            statTrack.Instance.MoneyReceived += value;
 
+            if (navigator.Unit.UnitType == UnitType.MailTruck)
+            {
+                statTrack.Instance.MailDelivered += 1;
+            } else 
+            if (navigator.Unit.UnitType == UnitType.PackageTruck)
+            {
+                statTrack.Instance.PackagesDelivered += 1;
+            } else 
+            if (navigator.Unit.UnitType == UnitType.Drone)
+            {
+                statTrack.Instance.DronesDelivered += 1;
+            }
+            
             moneyManagerSocket.Instance.AddMoney(value);
         }
     }

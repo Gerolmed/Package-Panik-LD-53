@@ -162,6 +162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moneyManagerSocket: {fileID: 11400000, guid: dad353d06ef73a242bff9cbbc1922105, type: 2}
+  statTrack: {fileID: 11400000, guid: 51ef32a9c657ab3428b3bc0606219bce, type: 2}
   mailMoney: 10
   packageMoney: 20
   droneMoney: 50

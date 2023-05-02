@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 136586f01c3f44f1b0fdf71a5d789bb4, type: 3}
   m_Name: MailUnit2
   m_EditorClassIdentifier: 
+  deliveryType: 0
   navType: 0
   unitType: 0
   icon: {fileID: 21300000, guid: 403be3bc025af8145960265e6682d1da, type: 3}
   totalWeight: 3
-  maintenanceCost: 10
-  purchaseCost: 25
+  maintenanceCost: 20
+  purchaseCost: 65
   facingUp: {fileID: 21300000, guid: ff00b306a93886348a9005418748e8a8, type: 3}
   facingRight: {fileID: 21300000, guid: 358dbf06415779341a74ec9ceed05c22, type: 3}
   facingDown: {fileID: 21300000, guid: 3edd543406be9be4f938c0c57c8fcb6a, type: 3}

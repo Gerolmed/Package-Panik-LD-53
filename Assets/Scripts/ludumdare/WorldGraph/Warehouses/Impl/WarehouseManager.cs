@@ -57,7 +57,7 @@ namespace LudumDare.WorldGraph.Warehouses.Impl
 
         public IEnumerable<Warehouse> GetAll()
         {
-            return _warehouses;
+            return GetComponentsInChildren<Warehouse>();
         }
     }
 }

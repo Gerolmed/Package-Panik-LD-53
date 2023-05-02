@@ -17,8 +17,8 @@ MonoBehaviour:
   unitType: 2
   icon: {fileID: 21300000, guid: 917c331c0d1240e419369701f54f3801, type: 3}
   totalWeight: 1
-  maintenanceCost: 30
-  purchaseCost: 150
+  maintenanceCost: 100
+  purchaseCost: 500
   facingUp: {fileID: 21300000, guid: 62eadd5d1574e394ba2d753815f2765b, type: 3}
   facingRight: {fileID: 21300000, guid: 62eadd5d1574e394ba2d753815f2765b, type: 3}
   facingDown: {fileID: 21300000, guid: 62eadd5d1574e394ba2d753815f2765b, type: 3}

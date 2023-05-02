@@ -7,9 +7,9 @@ namespace LudumDare.Delivery
     {
 
 
-        private static readonly float BASE_SCALING = 0.0006f;
+        private static readonly float BASE_SCALING = 0.0015f;
         private static readonly float NOISE_FREQUENCY = 0.04f;
-        private static readonly float NOISE_AMPLITUDE = 5;
+        private static readonly float NOISE_AMPLITUDE = 6;
 
         public RandomMathFunction()
         {

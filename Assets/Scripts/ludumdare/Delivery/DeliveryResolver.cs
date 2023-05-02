@@ -81,30 +81,36 @@ namespace LudumDare.Delivery
             Dictionary<DeliveryCommand, List<DeliveryCommand>> clusterStorage = null;
             BTreeNode<DeliveryCommand> connections = null;
             List<DeliveryCommand> cluster = null;
+            var mailProcessed = 0;
             foreach (var unit in mailUnits)
             {
-                (cluster, clusterStorage, connections) = CluserUtil.FindFirstCluster<DeliveryCommand>(mailCommands, Distance, (cluster) => cluster.Count, 2, clusterStorage, connections);
+                var requiredCmds = Math.Min(mailCommands.Count - mailProcessed - 1, 2);
+                (cluster, clusterStorage, connections) = CluserUtil.FindFirstCluster<DeliveryCommand>(mailCommands, Distance, (cluster) => cluster.Count, requiredCmds, clusterStorage, connections);
 
                 if(cluster == null || cluster.Count == 0) continue;
                 DispatchUnit(cluster.Select(cmd => cmd.Pos).ToList(), unit);
 
                 proceessedCommands.AddRange(cluster);
+                mailProcessed += cluster.Count;
                 cluster.Clear();
-
+                
                 if(connections == null) break;
             }
 
             var packageCommands = _commands.FindAll(cmd => cmd.DeliveryType == DeliveryType.Package).Take(100).ToList();
             var packageUnits = storage.GetAvailableUnits().Where((unit) => (unit.Type.DeliveryType == DeliveryType.Package && !unit.Occupied));
             (clusterStorage, connections, cluster) = (null, null, null);
+            var pkgProcessed = 0;
             foreach (var unit in packageUnits)
             {
-                (cluster, clusterStorage, connections) = CluserUtil.FindFirstCluster<DeliveryCommand>(mailCommands, Distance, (cluster) => cluster.Count, 2, clusterStorage, connections);
+                var requiredCmds = Math.Min(packageCommands.Count - pkgProcessed - 1, 2);
+                (cluster, clusterStorage, connections) = CluserUtil.FindFirstCluster<DeliveryCommand>(packageCommands, Distance, (cluster) => cluster.Count, requiredCmds, clusterStorage, connections);
 
                 if(cluster == null || cluster.Count == 0) continue;
                 DispatchUnit(cluster.Select(cmd => cmd.Pos).ToList(), unit);
 
                 proceessedCommands.AddRange(cluster);
+                pkgProcessed += cluster.Count;
                 cluster.Clear();
                 
                 if(connections == null) break;
@@ -113,14 +119,21 @@ namespace LudumDare.Delivery
             var droneCommands = _commands.FindAll(cmd => cmd.DeliveryType == DeliveryType.DronePackage).Take(100).ToList();
             var droneeUnits = storage.GetAvailableUnits().Where((unit) => (unit.Type.DeliveryType == DeliveryType.DronePackage && !unit.Occupied));
             (clusterStorage, connections, cluster) = (null, null, null);
+            var droneProcessed = 0;
             foreach (var unit in packageUnits)
             {
-                (cluster, clusterStorage, connections) = CluserUtil.FindFirstCluster<DeliveryCommand>(mailCommands, Distance, (cluster) => cluster.Count, 2, clusterStorage, connections);
+                /* (cluster, clusterStorage, connections) = CluserUtil.FindFirstCluster<DeliveryCommand>(droneCommands, Distance, (cluster) => {
+                    return (cluster.Where(cmd => (timeCtl.Instance.Cycle - cmd.Cycle >= timeCtl.Instance.CyclesPerDay - 1)).Count > 0)? 100 : cluster.Count;
+                }, 3, clusterStorage, connections); */
+                var requiredCmds = Math.Min(droneCommands.Count - droneProcessed - 1, 2);
+                (cluster, clusterStorage, connections) = CluserUtil.FindFirstCluster<DeliveryCommand>(droneCommands, Distance, (cluster) => cluster.Count, requiredCmds, clusterStorage, connections);
+
 
                 if(cluster == null || cluster.Count == 0) continue;
                 DispatchUnit(cluster.Select(cmd => cmd.Pos).ToList(), unit);
 
                 proceessedCommands.AddRange(cluster);
+                droneProcessed += cluster.Count;
                 cluster.Clear();
                 
                 if(connections == null) break;
@@ -151,22 +164,27 @@ namespace LudumDare.Delivery
             return (cmd1.Pos.x - cmd2.Pos.x) * (cmd1.Pos.x - cmd2.Pos.x) + (cmd1.Pos.y - cmd2.Pos.y) * (cmd1.Pos.y - cmd2.Pos.y);
         }
 
-        private IReadOnlyList<PathNode> BuildPath(List<Vector2Int> commands, IWarehouse warehouse, NavUser user)
+        private IReadOnlyList<PathNode> BuildPath(List<Vector2Int> commands, IWarehouse warehouse, NavUser user, Boolean isDrone)
         {
             var path = new List<PathNode>();
             path.Add(new PathNode() { Pos = warehouse.GetPosition() });
 
             foreach (var cmd in commands)
             {
-                MoveToDestintion(cmd, path, user);
+                MoveToDestintion(cmd, path, user, isDrone);
             }
 
-            MoveToDestintion(warehouse.GetPosition(), path, user);
+            MoveToDestintion(warehouse.GetPosition(), path, user, isDrone);
             return path;
         }
 
-        private void MoveToDestintion(Vector2Int dest, List<PathNode> path, NavUser user)
+        private void MoveToDestintion(Vector2Int dest, List<PathNode> path, NavUser user, Boolean isDrone)
         {
+            if(isDrone) {
+                path.Add(new PathNode() { Pos = dest });
+                return;
+            }
+
             var current = _graph.GetRelativePos(path.Last().Pos);
             var relDest = _graph.GetRelativePos(dest);
             var steps = _map.Search(current, relDest, user);
@@ -196,7 +214,7 @@ namespace LudumDare.Delivery
                 }
             }
 
-            var path = BuildPath(positions, nearest, unit.Type.NavUser);
+            var path = BuildPath(positions, nearest, unit.Type.NavUser, unit.Type.DeliveryType == DeliveryType.DronePackage);
             StartCoroutine(DispatchUnitInternal(path, unit));
         }
 

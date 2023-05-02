@@ -44,12 +44,13 @@ namespace LudumDare.Delivery
                 var cyclesPerDay = controlManagerSocket.Instance.CyclesPerDay;
                 var age = cycle - (int) (cyclesPerDay * district.UnlockedSince / 60 / 24);
  
-                var targets = DistributeOnto(possibleTargets, (int) _packetDistributionFunction.GetRandomValue(age) / 2);
+                var targets0 = DistributeOnto(possibleTargets, (int) _packetDistributionFunction.GetRandomValue(age) / 2);
+                var targets1 = DistributeOnto(possibleTargets, (int) _packetDistributionFunction.GetRandomValue(age) / 2);
                 var droneTargets = DistributeOnto(possibleTargets, (int) (_packetDistributionFunction.GetRandomValue(age) / 10 - 4));
                 
                 var commands = new List<DeliveryCommand>();
-                commands.AddRange(targets.Select(target => new DeliveryCommand(target, DeliveryType.Mail, cycle)));
-                commands.AddRange(targets.Select(target => new DeliveryCommand(target, DeliveryType.Package, cycle)));
+                // commands.AddRange(targets0.Select(target => new DeliveryCommand(target, DeliveryType.Mail, cycle)));
+                commands.AddRange(targets1.Select(target => new DeliveryCommand(target, DeliveryType.Package, cycle)));
                 commands.AddRange(droneTargets.Select(target => new DeliveryCommand(target, DeliveryType.DronePackage, cycle)));
 
                 resolver.ExecuteDelivery(commands);

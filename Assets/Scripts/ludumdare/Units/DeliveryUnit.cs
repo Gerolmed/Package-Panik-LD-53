@@ -7,7 +7,7 @@ namespace LudumDare.Units
     public class DeliveryUnit : ScriptableObject
     {
         [SerializeField]
-        public DeliveryType deliveryType { get; }
+        public DeliveryType deliveryType;
 
         public DeliveryType DeliveryType => deliveryType;
         

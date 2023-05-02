@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 136586f01c3f44f1b0fdf71a5d789bb4, type: 3}
   m_Name: DroneUnit2
   m_EditorClassIdentifier: 
+  deliveryType: 2
   navType: 1
   unitType: 2
   icon: {fileID: 21300000, guid: da78b7db18b185046910905b093e5a37, type: 3}
